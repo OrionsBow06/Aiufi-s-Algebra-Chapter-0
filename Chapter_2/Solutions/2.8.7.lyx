@@ -1,0 +1,1052 @@
+#LyX 2.4 created this file. For more info see https://www.lyx.org/
+\lyxformat 620
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\begin_preamble
+\usepackage{tikz}
+\usepackage{tikz-cd}
+\end_preamble
+\use_default_options true
+\maintain_unincluded_children no
+\language canadian
+\language_package default
+\inputencoding utf8
+\fontencoding auto
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_roman_osf false
+\font_sans_osf false
+\font_typewriter_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\float_placement class
+\float_alignment class
+\paperfontsize default
+\spacing onehalf
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_formatted_ref 0
+\use_minted 0
+\use_lineno 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tablestyle default
+\tracking_changes false
+\output_changes false
+\change_bars false
+\postpone_fragile_content true
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\docbook_table_output 0
+\docbook_mathml_prefix 1
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Coproducts on Groups
+\end_layout
+
+\begin_layout Author
+Karan Chauhan
+\end_layout
+
+\begin_layout Date
+2025-06-19
+\end_layout
+
+\begin_layout Section
+Question 
+\end_layout
+
+\begin_layout Standard
+Let 
+\begin_inset Formula $(A\vert R)$
+\end_inset
+
+,
+ resp.
+ 
+\begin_inset Formula $(A\vert R')$
+\end_inset
+
+,
+ be a presentation for a group 
+\begin_inset Formula $G$
+\end_inset
+
+,
+ resp,
+ 
+\begin_inset Formula $G'$
+\end_inset
+
+.
+ We may assume that 
+\begin_inset Formula $A$
+\end_inset
+
+ and 
+\begin_inset Formula $A'$
+\end_inset
+
+ are disjoint.
+ Prove that the group 
+\begin_inset Formula $G*G'$
+\end_inset
+
+ presented by 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+(A\cup A'\vert R\cup R')
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+satisfies the universal property for the coproduct of 
+\begin_inset Formula $G$
+\end_inset
+
+ and 
+\begin_inset Formula $G'$
+\end_inset
+
+ in Grp.
+ 
+\end_layout
+
+\begin_layout Section
+Proof 
+\end_layout
+
+\begin_layout Standard
+First we will construct natural morphisms 
+\begin_inset Formula $i_{A}:\frac{F(A)}{R}\to\frac{F(A\cup A')}{R\cup R'}$
+\end_inset
+
+ and 
+\begin_inset Formula $i_{A'}:\frac{F(A')}{R'}\to\frac{F(A\cup A')}{R\cup R'}$
+\end_inset
+
+.
+ We know that there exists an inclusion function 
+\begin_inset Formula $f_{A}:A\to F(A)$
+\end_inset
+
+ and since 
+\begin_inset Formula $F(A)\subset F(A\cup A')$
+\end_inset
+
+,
+ there is an 
+\series bold
+inclusion
+\series default
+ function 
+\begin_inset Formula $id_{A}:F(A)\to F(A\cup A')$
+\end_inset
+
+.
+ It is to be noted that 
+\begin_inset Formula $id_{A}$
+\end_inset
+
+ is a group homomorphism.
+ Hence by the universal property of free groups ,we get that there exists a unique homomorphism 
+\begin_inset Formula $g_{A}:A\to F(A\cup A')$
+\end_inset
+
+ such that 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+g_{A}=id_{A}\circ f_{A}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+We know that there exists a surjective group homomorphism from 
+\begin_inset Formula $R\cup R'_{\sim}:F(A\cup A')\to\frac{F(A\cup A')}{R\cup R'}$
+\end_inset
+
+,
+ hence by the associativuty of morphisms,
+ we get that there exists a homomorphism 
+\begin_inset Formula $R\cup R'_{\sim}\circ id_{A}:F(A)\to\frac{F(A\cup A')}{R\cup R'}$
+\end_inset
+
+.
+ Since for any 
+\begin_inset Formula $r\in R,r\in R\cup R'$
+\end_inset
+
+,
+ hence we get that 
+\begin_inset Formula $r\in\ker(R\cup R'_{\sim}\circ id_{A})$
+\end_inset
+
+,
+ therefore 
+\begin_inset Formula $R\subset\ker(R\cup R'_{\sim}\circ id_{A})$
+\end_inset
+
+.
+ Thus by the universal property of quotients,
+ we get that there exists a unique morphism 
+\begin_inset Formula $i_{A}:\frac{F(A)}{R}\to\frac{F(A\cup A')}{R\cup R'}$
+\end_inset
+
+ such that 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+R\cup R'_{\sim}\circ id_{A}=i_{A}\circ R_{\sim}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+where is the surjective group homomorphism 
+\begin_inset Formula $R_{\sim}:F(A)\to\frac{F(A)}{R}$
+\end_inset
+
+.
+ In a simillar way,
+ we define 
+\begin_inset Formula $i_{A'}:\frac{F(A')}{R'}\to\frac{F(A\cup A')}{R\cup R'}$
+\end_inset
+
+ by replacing 
+\begin_inset Formula $A$
+\end_inset
+
+ with 
+\begin_inset Formula $A'$
+\end_inset
+
+ and 
+\begin_inset Formula $R$
+\end_inset
+
+ with 
+\begin_inset Formula $R'$
+\end_inset
+
+.
+ For the better understanding of the argument,
+ the following diagram is provided.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+[
+\backslash
+begin{tikzcd}
+\end_layout
+
+\begin_layout Plain Layout
+
+	&& A &&&& {A'} 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+	{F(A)} &&&& {F(A
+\backslash
+cup A')} &&&& {F(A')} 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+	{
+\backslash
+frac{F(A)}{R}} &&&& {
+\backslash
+frac{F(A
+\backslash
+cup A')}{R 
+\backslash
+cup R'}} &&&& {
+\backslash
+frac{F(A')}{R'}}
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+arrow["{f_{A}}"{description},
+ hook,
+ from=1-3,
+ to=3-1]
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+arrow["{
+\backslash
+exists!
+ g_A}"{description},
+ from=1-3,
+ to=3-5]
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+arrow["{
+\backslash
+exists !g_{A'}}"{description},
+ from=1-7,
+ to=3-5]
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+arrow["{f_{A'}}"{description},
+ hook',
+ from=1-7,
+ to=3-9]
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+arrow["{id_{A}}"{description},
+ hook',
+ from=3-1,
+ to=3-5]
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+arrow["{R_{
+\backslash
+sim}}"',
+ two heads,
+ from=3-1,
+ to=5-1]
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+arrow["{{R
+\backslash
+cup R'}_
+\backslash
+sim 
+\backslash
+circ id_{A}}"',
+ from=3-1,
+ to=5-5]
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+arrow["{{R
+\backslash
+cup R'}_
+\backslash
+sim}",
+ two heads,
+ from=3-5,
+ to=5-5]
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+arrow["{id_{A'}}"{description},
+ hook,
+ from=3-9,
+ to=3-5]
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+arrow["{{R
+\backslash
+cup R'}_
+\backslash
+sim 
+\backslash
+circ id_{A'}}",
+ from=3-9,
+ to=5-5]
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+arrow["{R'_{
+\backslash
+sim}}",
+ two heads,
+ from=3-9,
+ to=5-9]
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+arrow["{
+\backslash
+exists !
+ i_{A}}",
+ hook,
+ from=5-1,
+ to=5-5]
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+arrow["{
+\backslash
+exists !i_{A'}}",
+ hook',
+ from=5-9,
+ to=5-5]
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tikzcd}
+\backslash
+]
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Now let 
+\begin_inset Formula $H$
+\end_inset
+
+ be any group with the morphisms 
+\begin_inset Formula $j_{A}:\frac{F(A)}{R}\to H$
+\end_inset
+
+ and 
+\begin_inset Formula $j_{A'}:\frac{F(A')}{R'}\to H$
+\end_inset
+
+.
+ Now we want to show that there exists a unique group morphism 
+\begin_inset Formula $\tilde{\varphi}:\frac{F(A\cup A')}{R\cup R'}\to H$
+\end_inset
+
+ such that 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+i_{A}\circ\tilde{\varphi}=j_{A}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+and 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+i_{A'}\circ\tilde{\varphi}=j_{A'}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Thus consider the following diagram,
+ the explanation is given after
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+[
+\backslash
+begin{tikzcd}
+\end_layout
+
+\begin_layout Plain Layout
+
+	&&&&& {A
+\backslash
+cup A'} 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+	A && {F(A)} &&& {F(A
+\backslash
+cup A')} &&& {F(A')} && {A'} 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+	&&& {
+\backslash
+frac{F(A)}{R}} && {
+\backslash
+frac{F(A
+\backslash
+cup A')}{R
+\backslash
+cup R'}} && {
+\backslash
+frac{F(A')}{R'}} 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+	&&&&& H
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+arrow["{f_{A
+\backslash
+cup A'}}"{description},
+ from=1-6,
+ to=3-6]
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+arrow["{
+\backslash
+phi }"{description},
+ bend left = 30,
+ from=1-6,
+ to=9-6]
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+arrow["{g_A}"{description},
+ hook,
+ from=3-1,
+ to=1-6]
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+arrow["{f_A}"{description},
+ hook',
+ from=3-1,
+ to=3-3]
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+arrow["{id_A}"{description},
+ bend left = 30,
+ hook',
+ from=3-3,
+ to=3-6]
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+arrow["{R_{
+\backslash
+sim}}"{description},
+ two heads,
+ from=3-3,
+ to=5-4]
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+arrow["{R
+\backslash
+cup R'_{
+\backslash
+sim}}"{description},
+ from=3-6,
+ to=5-6]
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+arrow["{
+\backslash
+varphi }"{description},
+ bend right = 30,
+ from=3-6,
+ to=9-6]
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+arrow["{id_{A'}}"{description},
+ bend right = 30pt,
+ from=3-9,
+ to=3-6]
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+arrow["{R'_{
+\backslash
+sim}}"{description},
+ two heads,
+ from=3-9,
+ to=5-8]
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+arrow["{g_{A'}}"{description},
+ hook',
+ from=3-11,
+ to=1-6]
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+arrow["{f_{A'}}"{description},
+ hook,
+ from=3-11,
+ to=3-9]
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+arrow["{i_A}"{description},
+ from=5-4,
+ to=5-6]
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+arrow["{j_A}"{description},
+ from=5-4,
+ to=9-6]
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+arrow["{
+\backslash
+tilde{
+\backslash
+varphi }}"{description},
+ from=5-6,
+ to=9-6]
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+arrow["{i_{A'}}"{description},
+ from=5-8,
+ to=5-6]
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+arrow["{j_{A'}}"{description},
+ from=5-8,
+ to=9-6]
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tikzcd}
+\backslash
+]
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Hence we define 
+\begin_inset Formula $\phi:A\cup A'\to H$
+\end_inset
+
+ as follows 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\phi=\begin{cases}
+j_{A}\circ R_{\sim}\circ f_{A}(a) & a\in A\\
+j_{A'}\circ R'_{\sim}\circ f_{A'}(a') & a'\in A'
+\end{cases}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Since there exists a set function from 
+\begin_inset Formula $A\cup A'$
+\end_inset
+
+ to 
+\begin_inset Formula $H$
+\end_inset
+
+,
+ by the universal property of free groups,
+ we get that there must exist a unique group homomorphism 
+\begin_inset Formula $\varphi:F(A\cup A')\to H$
+\end_inset
+
+ such that 
+\begin_inset Formula $\phi=\varphi\circ f_{A\cup A'}$
+\end_inset
+
+.
+ Now we show that 
+\begin_inset Formula $R\cup R'\subset\ker(\varphi)$
+\end_inset
+
+.
+ Suppose 
+\begin_inset Formula $r\in R\cup R'$
+\end_inset
+
+,
+ tthen 
+\begin_inset Formula $r\in R$
+\end_inset
+
+ or 
+\begin_inset Formula $r\in R'$
+\end_inset
+
+,
+ Suppose 
+\begin_inset Formula $r\in R$
+\end_inset
+
+,
+ then 
+\begin_inset Formula $\phi(r)=j_{A}\circ R_{\sim}\circ f_{A}(r)$
+\end_inset
+
+,
+ and since 
+\begin_inset Formula $r\in R$
+\end_inset
+
+,
+ we get that 
+\begin_inset Formula $j_{A}\circ R_{\sim}\circ f_{A}(r)=e_{H}$
+\end_inset
+
+.
+ Simillarly,
+ suppose 
+\begin_inset Formula $r\in R'$
+\end_inset
+
+,
+ then 
+\begin_inset Formula $\phi(r)=j_{A'}\circ R'_{\sim}\circ f_{A'}(r)$
+\end_inset
+
+,
+ and since 
+\begin_inset Formula $r\in R'$
+\end_inset
+
+,
+ we get that 
+\begin_inset Formula $j_{A'}\circ R'_{\sim}\circ f_{A'}(r)=e_{H}$
+\end_inset
+
+.
+ Therefore 
+\begin_inset Formula $R\cup R'\subset\ker(\varphi)$
+\end_inset
+
+,
+ hence we get that there exists a unique homomorphism 
+\begin_inset Formula $\tilde{\varphi}:\frac{F(A\cup A')}{R\cup R'}\to H $
+\end_inset
+
+ such taht 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\varphi=\tilde{\varphi}\circ R\cup R'_{\sim}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Now we just want to show that 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\tilde{\varphi}\circ i_{A}=j_{A}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+and 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\tilde{\varphi}\circ i_{A'}=j_{A'}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document
