@@ -93,7 +93,7 @@
 \begin_body
 
 \begin_layout Title
-Noted on Section 2.9:
+Notes on Section 2.9:
  Group actions
 \end_layout
 
@@ -106,18 +106,105 @@ Karan Chauhan
 \end_layout
 
 \begin_layout Section
-Introduction
+Review 
+\end_layout
+
+\begin_layout Standard
+We what the notation 
+\begin_inset Formula $\text{End}_{\mathcal{C}}(A)$
+\end_inset
+
+ and 
+\begin_inset Formula $\text{Aut}_{\mathcal{C}}(A)$
+\end_inset
+
+ denote for a given category 
+\begin_inset Formula $\mathcal{C}$
+\end_inset
+
+ and object 
+\begin_inset Formula $A$
+\end_inset
+
+ in the category.
+ 
+\end_layout
+
+\begin_layout Standard
+We know that given a category 
+\begin_inset Formula $\mathcal{C}$
+\end_inset
+
+ and objects 
+\begin_inset Formula $A,B\in\text{obj}(\mathcal{C})$
+\end_inset
+
+,
+ then
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\text{Hom}_{\mathcal{C}}(A,B)$
+\end_inset
+
+ is the set of all morphisms from 
+\begin_inset Formula $A\to B$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\text{End}_{\mathcal{C}}(A)=\text{Hom}_{\mathcal{C}}(A,A)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\text{Aut}_{\mathcal{C}}(A)$
+\end_inset
+
+ is the set of all isomorphisms 
+\begin_inset Formula $f:A\to A$
+\end_inset
+
+,
+ hence 
+\begin_inset Formula $\text{Aut}_{\mathcal{C}}(A)\subseteq\text{End}_{\mathcal{C}}(A)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+note that 
+\begin_inset Formula $\text{Aut}_{\mathcal{C}}(A)$
+\end_inset
+
+ is a group with the operation being composition of groups and the identity being the identity map
+\end_layout
+
+\begin_layout Section
+Action of a group
 \end_layout
 
 \begin_layout Standard
 
 \series bold
-Defination 1.1:
- 
+Defination 2.1
+\begin_inset CommandInset label
+LatexCommand label
+name "def-2.1"
+
+\end_inset
+
+:
+
 \series default
-an 
+ 
 \emph on
-action 
+Action 
 \emph default
 of a group 
 \begin_inset Formula $G$
@@ -131,7 +218,7 @@ of a group
 \begin_inset Formula $C$
 \end_inset
 
- is simply a homomorphism 
+ is a (group) homomorphism 
 \end_layout
 
 \begin_layout Standard
@@ -146,33 +233,47 @@ of a group
 \end_layout
 
 \begin_layout Standard
+\begin_inset Formula $\sigma$
+\end_inset
 
-\series bold
-Defination 1.2:
- 
-\series default
-An action of a group 
+ is the action of 
 \begin_inset Formula $G$
 \end_inset
 
- on an object 
+ on 
 \begin_inset Formula $A$
 \end_inset
 
- of a category 
-\begin_inset Formula $C$
+.
+ 
+\series bold
+For the rest of notes,
+ 
+\begin_inset Formula $\sigma$
 \end_inset
 
- is 
-\emph on
-faithful 
-\emph default
-(or 
-\emph on
-effective
-\emph default
-) if the corresponding 
-\begin_inset Formula $\sigma:G\to\text{Aut}_{C}(A)$
+ denotes an action homomorphism 
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Defination 2.2
+\begin_inset CommandInset label
+LatexCommand label
+name "Defination-2.2"
+
+\end_inset
+
+:
+ 
+\series default
+
+\begin_inset Formula $\sigma:G\to\text{Aut}_{\mathcal{C}}(A)$
+\end_inset
+
+ is faithful if 
+\begin_inset Formula $\sigma$
 \end_inset
 
  is injective.
@@ -184,20 +285,20 @@ Actions on sets
 \end_layout
 
 \begin_layout Standard
-
-\series bold
-Defination 2.1:
- 
-\series default
-An action of a group 
+We fix a group 
 \begin_inset Formula $G$
 \end_inset
 
- in a ste 
-\begin_inset Formula $A$
+.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\forall A\in\text{obj}(\text{SET})$
 \end_inset
 
- is a set function
+,
+ we consider functions of the form 
 \end_layout
 
 \begin_layout Standard
@@ -213,44 +314,151 @@ An action of a group
 
 \begin_layout Standard
 such that 
-\begin_inset Formula $\forall a\in A.\rho(e_{G},a)=a$
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $(\forall a\in A)\text{ }\rho(e_{G},a)=a$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $\left(\forall a\in A\right)\left(\forall g,h\in G\right)\rho(gh,a)=\rho(g,\rho(h,a))$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+and we claim that given such a function 
+\begin_inset Formula $\rho$
+\end_inset
+
+,
+ we canonically define an action of 
+\begin_inset Formula $G$
+\end_inset
+
+ on 
+\begin_inset Formula $A$
+\end_inset
+
+ and every action 
+\begin_inset Formula $\sigma:G\to\text{Aut}_{SET}(A)$
+\end_inset
+
+ defines such a function 
+\begin_inset Formula $\rho$
+\end_inset
+
+.
+ Thus we prove the claim 
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Claim 3.1
+\begin_inset CommandInset label
+LatexCommand label
+name "Claim-3.1"
+
+\end_inset
+
+:
+ 
+\series default
+Given a set 
+\begin_inset Formula $A$
+\end_inset
+
+ and a group 
+\begin_inset Formula $G$
+\end_inset
+
+,
+ any function 
+\begin_inset Formula $\rho:G\times A\to A$
+\end_inset
+
+ such that 
+\begin_inset Formula $\forall a\in A)\text{ }\rho(e_{G},a)=a$
 \end_inset
 
  and 
+\begin_inset Formula $\left(\forall a\in A\right)\left(\forall g,h\in G\right)\rho(gh,a)=\rho(g,\rho(h,a))$
+\end_inset
+
+,
+ defines an action of 
+\begin_inset Formula $G$
+\end_inset
+
+ on 
+\begin_inset Formula $A$
+\end_inset
+
+.
+ Thus we prove it as follows
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Defination 3.2
+\begin_inset CommandInset label
+LatexCommand label
+name "Defination-3.2"
+
+\end_inset
+
+:
+ 
+\series default
+Given 
+\begin_inset Formula $\rho:G\times A\to A$
+\end_inset
+
+,
+ we define 
+\begin_inset Formula $\sigma:G\to\text{End}_{SET}(A)$
+\end_inset
+
+ as 
+\begin_inset Formula $\forall g\in G$
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
 \begin_inset Formula 
 \[
-\left(\forall g,h\in G\right),\left(\forall a\in A\right):\rho(gh,a)=\rho(g,\rho(h,a))
+\sigma:g\to\sigma_{g}
 \]
 
 \end_inset
 
-.
+
 \end_layout
 
 \begin_layout Standard
-After fixing a 
-\begin_inset Formula $g\in G$
+where 
+\begin_inset Formula $\sigma_{g}$
 \end_inset
 
-,
- the function 
-\begin_inset Formula $\rho$
+ is a set function such that 
+\begin_inset Formula $\forall a\in A$
 \end_inset
 
- gives me a function 
-\begin_inset Formula $\sigma(g)\in\text{Aut}_{C}(A)$
-\end_inset
 
- defined as 
 \end_layout
 
 \begin_layout Standard
 \begin_inset Formula 
 \[
-\sigma(g)(a):=\rho(g,a)
+\sigma_{g}:a\to\rho(g,a)
 \]
 
 \end_inset
@@ -259,33 +467,89 @@ After fixing a
 \end_layout
 
 \begin_layout Standard
-,
- hence 
-\begin_inset Formula $\rho$
-\end_inset
-
- defines a function 
-\begin_inset Formula $\sigma:G\to\text{Aut}_{C}(A)$
+It is clear that 
+\begin_inset Formula $\sigma_{g}\in\text{End}_{SET}(A)$
 \end_inset
 
 .
- Due to the associativity of 
-\begin_inset Formula $\rho$
-\end_inset
-
-,
- the sturucture of 
+ Now we show that 
 \begin_inset Formula $\sigma$
 \end_inset
 
- is preserved as follows.
+ is a group homomorphism.
+ 
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Lemma 3.3
+\begin_inset CommandInset label
+LatexCommand label
+name "Lemma-3.3"
+
+\end_inset
+
+:
+ 
+\series default
+
+\begin_inset Formula $\sigma$
+\end_inset
+
+ as defined above is a group homomorphism.
+
+\series bold
+ 
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Proof:
+ 
+\series default
+
+\begin_inset Formula $\forall g,h\in G$
+\end_inset
+
+ and 
+\begin_inset Formula $\forall a\in A$
+\end_inset
+
+,
+ we consider 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\sigma_{gh}(a)=\rho(gh,a)=\rho(g,\rho(h,a))=\rho(g,\sigma_{h}(a))=\sigma_{g}\circ\sigma_{h}(a)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Since this is true for any 
+\begin_inset Formula $a\in A$
+\end_inset
+
+,
+ we get that for any 
+\begin_inset Formula $g,h\in G$
+\end_inset
+
+,
  
 \end_layout
 
 \begin_layout Standard
 \begin_inset Formula 
 \[
-\sigma(gh)(a)=\rho(gh,a)=\rho(g,\rho(h,a))=\rho(g,\sigma(h)(a))=\sigma(g)\circ\sigma(h)(a)
+\sigma_{gh}=\sigma_{g}\circ\sigma_{h}
 \]
 
 \end_inset
@@ -294,15 +558,1023 @@ After fixing a
 \end_layout
 
 \begin_layout Standard
-This also verifies that 
-\begin_inset Formula $\sigma(g^{-1})$
+Hence 
+\begin_inset Formula $\sigma(gh)=\sigma(g)\circ\sigma(h)$
 \end_inset
 
- acts as an inverse of 
-\begin_inset Formula $\sigma(g)$
+,
+ therefore,
+ we have shown that 
+\begin_inset Formula $\sigma$
+\end_inset
+
+ is a group homomorphism.
+ 
+\begin_inset Formula $\square$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Lemma 3.4
+\begin_inset CommandInset label
+LatexCommand label
+name "Lemma-3.4"
+
+\end_inset
+
+:
+ 
+\series default
+
+\begin_inset Formula $\forall g\in G,$
+\end_inset
+
+ 
+\begin_inset Formula $\sigma_{g}\in\text{Aut}_{SET}(A)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Proof:
+ 
+\series default
+We will show that 
+\begin_inset Formula $\forall g\in G$
+\end_inset
+
+,
+ 
+\begin_inset Formula $(\sigma_{g})^{-1}=\sigma_{g^{-1}}$
+\end_inset
+
+,
+ hence 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\sigma_{g}\circ\sigma_{g^{-1}}=\sigma_{gg^{-1}}=\sigma_{e_{G}}=I
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\sigma_{g^{-1}}\circ\sigma_{g}=\sigma_{g^{-1}g}=\sigma_{e_{G}}=I
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Therefore,
+ 
+\begin_inset Formula $\forall g\in G,\sigma_{g}\in\text{Aut}_{SET}(A)$
+\end_inset
+
+ 
+\begin_inset Formula $\square$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Thus we have shown that 
+\begin_inset Formula $\sigma$
+\end_inset
+
+ (
+\begin_inset CommandInset ref
+LatexCommand labelonly
+reference "Defination-3.2"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+),
+ is a group homomorphism from 
+\begin_inset Formula $G\to\text{Aut}_{SET}(A)$
 \end_inset
 
 .
+ Thus showing that 
+\begin_inset Formula $\sigma$
+\end_inset
+
+ is an action,
+ hence proving the claim (
+\begin_inset CommandInset ref
+LatexCommand labelonly
+reference "Claim-3.1"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+) 
+\begin_inset Formula $\square$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Claim 3.5
+\begin_inset CommandInset label
+LatexCommand label
+name "Claim-3.5:"
+
+\end_inset
+
+:
+ 
+\series default
+Given an action 
+\begin_inset Formula $\sigma:G\to\text{Aut}_{SET}(A)$
+\end_inset
+
+,
+ it defines a function 
+\begin_inset Formula $\rho:G\times A\to A$
+\end_inset
+
+ such that 
+\begin_inset Formula $\forall a\in A)\text{ }\rho(e_{G},a)=a$
+\end_inset
+
+ and 
+\begin_inset Formula $\left(\forall a\in A\right)\left(\forall g,h\in G\right)\rho(gh,a)=\rho(g,\rho(h,a))$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Defination 3.6
+\begin_inset CommandInset label
+LatexCommand label
+name "Defination-3.6"
+
+\end_inset
+
+:
+ 
+\series default
+Given an action 
+\begin_inset Formula $\sigma:G\to\text{Aut}_{SET}(A)$
+\end_inset
+
+,
+ we define 
+\begin_inset Formula $\rho:G\times A\to A$
+\end_inset
+
+ as 
+\begin_inset Formula $\forall a\in A$
+\end_inset
+
+ and 
+\begin_inset Formula $\forall g\in G$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\rho(g,a):=\sigma_{g}(a)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Claim 3.7
+\begin_inset CommandInset label
+LatexCommand label
+name "Claim-3.7"
+
+\end_inset
+
+:
+ 
+\series default
+
+\begin_inset Formula $\rho$
+\end_inset
+
+ as defined (
+\begin_inset CommandInset ref
+LatexCommand labelonly
+reference "Defination-3.6"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+) follows that 
+\begin_inset Formula $\forall a\in A)\text{ }\rho(e_{G},a)=a$
+\end_inset
+
+ and 
+\begin_inset Formula $\left(\forall a\in A\right)\left(\forall g,h\in G\right)\rho(gh,a)=\rho(g,\rho(h,a))$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Proof:
+ 
+\series default
+Consider 
+\begin_inset Formula $a\in A$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\rho(e_{G},a)=\sigma_{e_{G}}(a)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Since 
+\begin_inset Formula $\sigma$
+\end_inset
+
+ is a group homomorphism,
+ it must map the identity 
+\begin_inset Formula $e_{G}$
+\end_inset
+
+ in 
+\begin_inset Formula $G$
+\end_inset
+
+ to the identity in 
+\begin_inset Formula $\text{Aut}_{SET}(A)$
+\end_inset
+
+,
+ which is the identity map hence 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\rho(e_{G},a)=\sigma_{e_{G}}(a)=a
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Thus 
+\begin_inset Formula $\forall a\in A)\text{ }\rho(e_{G},a)=a$
+\end_inset
+
+.
+ Now consider 
+\begin_inset Formula $\left(\forall a\in A\right)\left(\forall g,h\in G\right)$
+\end_inset
+
+,
+ then 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\rho(gh,a)=\sigma_{gh}(a)=\sigma_{g}\circ\sigma_{h}(a)=\rho(g,\sigma_{h}(a))=\rho(g,\rho(h,a))
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Thus we have proved that 
+\begin_inset Formula $\rho$
+\end_inset
+
+ as defined (
+\begin_inset CommandInset ref
+LatexCommand labelonly
+reference "Defination-3.6"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+) follows that 
+\begin_inset Formula $\forall a\in A)\text{ }\rho(e_{G},a)=a$
+\end_inset
+
+ and 
+\begin_inset Formula $\left(\forall a\in A\right)\left(\forall g,h\in G\right)\rho(gh,a)=\rho(g,\rho(h,a))$
+\end_inset
+
+ 
+\begin_inset Formula $\square$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Therefore we have proved the claim (
+\begin_inset CommandInset ref
+LatexCommand labelonly
+reference "Claim-3.5:"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+)
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Defination 3.8
+\begin_inset CommandInset label
+LatexCommand label
+name "Defination-3.8"
+
+\end_inset
+
+:
+ 
+\series default
+
+\begin_inset Formula $\sigma:G\to\text{Aut}_{SET}(A)$
+\end_inset
+
+ is transitive if 
+\begin_inset Formula $\forall a,b\in G.\exists g\in G$
+\end_inset
+
+ such that 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\sigma_{g}(a)=b
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Defination 3.9
+\begin_inset CommandInset label
+LatexCommand label
+name "Defination-3.9"
+
+\end_inset
+
+:
+ 
+\series default
+Orbit of 
+\begin_inset Formula $a\in A$
+\end_inset
+
+ under 
+\begin_inset Formula $\sigma:G\to\text{Aut}_{SET}(A)$
+\end_inset
+
+ is the set 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+O_{G}(a)=\{ga\vert g\in G\}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+where 
+\begin_inset Formula $ga$
+\end_inset
+
+ is the same as 
+\begin_inset Formula $\rho(g,a)$
+\end_inset
+
+ where 
+\begin_inset Formula $\rho$
+\end_inset
+
+ is teh function defined using 
+\begin_inset Formula $\sigma$
+\end_inset
+
+ (
+\begin_inset CommandInset ref
+LatexCommand labelonly
+reference "Claim-3.1"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+)
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Defination 3.10
+\begin_inset CommandInset label
+LatexCommand label
+name "Defination-3.10"
+
+\end_inset
+
+:
+ 
+\series default
+Given 
+\begin_inset Formula $\sigma:G\to\text{Aut}_{SET}(A)$
+\end_inset
+
+,
+ then we define the stabelizer for any 
+\begin_inset Formula $a\in A$
+\end_inset
+
+ as 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\text{Stab}_{G}(a)=\{g\in G\vert\sigma_{g}(a)=a\}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Category G-set
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Defination 3.11
+\begin_inset CommandInset label
+LatexCommand label
+name "Defination-3.11"
+
+\end_inset
+
+:
+ 
+\series default
+Fixing a group 
+\begin_inset Formula $G$
+\end_inset
+
+,
+ we define a category
+\emph on
+ 
+\emph default
+as
+\emph on
+ 
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Objects:
+ 
+\series default
+
+\begin_inset Formula $(\rho,A)$
+\end_inset
+
+ where 
+\begin_inset Formula $A\in\text{obj}(SET)$
+\end_inset
+
+ and 
+\begin_inset Formula $\rho:G\times A\to A$
+\end_inset
+
+ as defined in 
+\begin_inset CommandInset ref
+LatexCommand labelonly
+reference "Defination-3.6"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Morphisms:
+ 
+\series default
+Set functions which are compatible with the actions i.e.
+ functions 
+\begin_inset Formula $f:A\to A'$
+\end_inset
+
+ such that 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\rho(g,f(a))=f(\rho(g,a))
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+This category is called G-set.
+ 
+\end_layout
+
+\begin_layout Standard
+A commutative diagram to explain the concept is (the description follows the diagram)
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+[
+\backslash
+begin{tikzcd}
+\end_layout
+
+\begin_layout Plain Layout
+
+	&&&&& G 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+	{G
+\backslash
+times A} &&&&& {G
+\backslash
+times A'} 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+	A &&&&& {A'}
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+arrow["{
+\backslash
+pi_{G}}"{description},
+ from=3-1,
+ to=1-6]
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+arrow["{
+\backslash
+exists !
+ 
+\backslash
+phi }"{description},
+ from=3-1,
+ to=3-6]
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+arrow["{
+\backslash
+pi_A}"{description},
+ from=3-1,
+ to=5-1]
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+arrow["{f
+\backslash
+circ 
+\backslash
+pi_A}"{description},
+ from=3-1,
+ to=5-6]
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+arrow["{
+\backslash
+pi'_G}"{description},
+ from=3-6,
+ to=1-6]
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+arrow["{
+\backslash
+pi'_{A'}}"{description},
+ from=3-6,
+ to=5-6]
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+arrow["f"{description},
+ from=5-1,
+ to=5-6]
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tikzcd}
+\backslash
+]
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Description:
+ 
+\series default
+Since 
+\begin_inset Formula $G\times A$
+\end_inset
+
+ is a product in teh category SET,
+ we know there exists projections 
+\begin_inset Formula $\pi_{G}$
+\end_inset
+
+ and 
+\begin_inset Formula $\rho$
+\end_inset
+
+.
+ Simillarly,
+ since 
+\begin_inset Formula $G\times A'$
+\end_inset
+
+ is a product in teh category SET,
+ we know there exists projections 
+\begin_inset Formula $\pi'_{G}$
+\end_inset
+
+ and 
+\begin_inset Formula $\rho'$
+\end_inset
+
+.
+ We consider 
+\begin_inset Formula $f$
+\end_inset
+
+ to be any set function from 
+\begin_inset Formula $A$
+\end_inset
+
+ to 
+\begin_inset Formula $A'$
+\end_inset
+
+.
+ then we trivially there exists 
+\begin_inset Formula $f\circ\pi_{A}:G\times A\to A'$
+\end_inset
+
+,
+ thus by the universal property of products in set,
+ we get that there exists a unique set function 
+\begin_inset Formula $\phi$
+\end_inset
+
+ such that 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\rho'\circ\phi=f\circ\rho
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+It is to be noted that given any 
+\begin_inset Formula $(g,a)\in G\times a,$
+\end_inset
+
+then it's map becomes as follows 
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+[
+\backslash
+begin{tikzcd}
+\end_layout
+
+\begin_layout Plain Layout
+
+	&&&&& g 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+	{(g,a)} &&&&& {(g,
+\backslash
+phi(a) )} 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+	{
+\backslash
+rho(g,a)} &&&&& {f(
+\backslash
+rho(g,a))=
+\backslash
+rho'(g,
+\backslash
+phi(a))}
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+arrow["{
+\backslash
+pi_{G}}"{description},
+ from=3-1,
+ to=1-6]
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+arrow["{
+\backslash
+exists !
+ 
+\backslash
+phi }"{description},
+ from=3-1,
+ to=3-6]
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+arrow["{
+\backslash
+rho }"{description},
+ from=3-1,
+ to=5-1]
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+arrow["{f
+\backslash
+circ 
+\backslash
+pi_A}"{description},
+ from=3-1,
+ to=5-6]
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+arrow["{
+\backslash
+pi'_G}"{description},
+ from=3-6,
+ to=1-6]
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+arrow["{
+\backslash
+rho'}"{description},
+ from=3-6,
+ to=5-6]
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+arrow["f"{description},
+ from=5-1,
+ to=5-6]
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tikzcd}
+\backslash
+]
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+and by the commutative diagram we get that 
+\begin_inset Formula $f(\rho(g,a))=\rho'(g,\phi(a))$
+\end_inset
+
+.
+ Hence we an intuition why we consider morphisms to be set functions which are compatible with the actions.
 \end_layout
 
 \end_body
