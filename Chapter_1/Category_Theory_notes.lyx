@@ -1,0 +1,654 @@
+#LyX 2.4 created this file. For more info see https://www.lyx.org/
+\lyxformat 620
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\begin_preamble
+\usepackage{tikz}
+\usepackage{tikz-cd}
+\end_preamble
+\use_default_options true
+\maintain_unincluded_children no
+\language canadian
+\language_package default
+\inputencoding utf8
+\fontencoding auto
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_roman_osf false
+\font_sans_osf false
+\font_typewriter_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\float_placement class
+\float_alignment class
+\paperfontsize default
+\spacing onehalf
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_formatted_ref 0
+\use_minted 0
+\use_lineno 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tablestyle default
+\tracking_changes false
+\output_changes false
+\change_bars false
+\postpone_fragile_content true
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\docbook_table_output 0
+\docbook_mathml_prefix 1
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Basic Category Theory 
+\end_layout
+
+\begin_layout Author
+Karan Chauhan
+\end_layout
+
+\begin_layout Date
+2025-06-28
+\end_layout
+
+\begin_layout Section
+Categories 
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Definition 1.1
+\begin_inset CommandInset label
+LatexCommand label
+name "Definition-1.1"
+
+\end_inset
+
+:
+ 
+\series default
+A 
+\emph on
+Category 
+\emph default
+
+\begin_inset Formula $\mathcal{C}$
+\end_inset
+
+ consists of 
+\end_layout
+
+\begin_layout Itemize
+a class 
+\begin_inset Formula $\text{Obj}(\mathcal{C})$
+\end_inset
+
+ of objects of the category 
+\end_layout
+
+\begin_layout Itemize
+for every two objects 
+\begin_inset Formula $A,B$
+\end_inset
+
+ of 
+\begin_inset Formula $\mathcal{C}$
+\end_inset
+
+,
+ a set 
+\begin_inset Formula $\text{Hom}_{\mathcal{C}}(A,B)$
+\end_inset
+
+ of morphisms of with the properties 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula $\forall A\in\text{Obj}(\mathcal{C}):1_{A}\in\text{Hom}_{\mathcal{C}}(A,A)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\forall f\in\text{Hom}_{\mathcal{C}}(A,B).\forall g\in\text{Hom}_{\mathcal{C}}(B,C):\exists gf\in\text{Hom}_{\mathcal{C}}(A,C)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\forall f\in\text{Hom}_{\mathcal{C}}(A,B).\forall g\in\text{Hom}_{\mathcal{C}}(B,C).\forall h\in\text{Hom}_{\mathcal{C}}(C,D):h(gf)=(hg)f$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\forall f\in\text{Hom}_{\mathcal{C}}(A,B):f\circ1_{A}=1_{B}\circ f=f$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+A special notation used is 
+\begin_inset Formula $\text{End}_{\mathcal{C}}(A):=\text{Hom}_{\mathcal{C}}(A,A)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Morphisms 
+\end_layout
+
+\begin_layout Standard
+Let 
+\begin_inset Formula $\mathcal{C}$
+\end_inset
+
+ be a category 
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Definition 2.1
+\begin_inset CommandInset label
+LatexCommand label
+name "Definition-2.1"
+
+\end_inset
+
+:
+ 
+\series default
+A morphism 
+\begin_inset Formula $f\in\text{Hom}_{\mathcal{C}}(A,B)$
+\end_inset
+
+ is an isomorphism if 
+\begin_inset Formula $\exists g\in\text{Hom}_{\mathcal{C}}(B,A)$
+\end_inset
+
+ such that 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+gf=1_{A};fg=1_{B}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The 
+\begin_inset CommandInset ref
+LatexCommand labelonly
+reference "Definition-2.1"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+ implies the uniquness of inverse
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Definition 2.2
+\begin_inset CommandInset label
+LatexCommand label
+name "Definition-2.2"
+
+\end_inset
+
+:
+ 
+\series default
+A category in which every morphism is an isomorphism is called a 
+\emph on
+groupoid.
+ 
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Definition 2.3
+\series default
+
+\begin_inset CommandInset label
+LatexCommand label
+name "Definition-2.3"
+
+\end_inset
+
+
+\series bold
+:
+ 
+\series default
+An 
+\emph on
+automorphism 
+\emph default
+of an object 
+\begin_inset Formula $A$
+\end_inset
+
+ of a category 
+\begin_inset Formula $\mathcal{C}$
+\end_inset
+
+ is an
+\series bold
+ 
+\series default
+isomorphism from 
+\begin_inset Formula $A$
+\end_inset
+
+ to itself.
+ Set of automorphisms of 
+\begin_inset Formula $A$
+\end_inset
+
+ is 
+\begin_inset Formula $\text{Aut}_{\mathcal{C}}(A)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+It is trivial that 
+\begin_inset Formula $\text{Aut}_{\mathcal{C}}(A)\subseteq\text{End}_{\mathcal{C}}(A)$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Definition 2.4
+\begin_inset CommandInset label
+LatexCommand label
+name "Definition-2.4"
+
+\end_inset
+
+:
+ 
+\series default
+Let 
+\begin_inset Formula $\mathcal{C}$
+\end_inset
+
+ be a category,
+ A morphism 
+\begin_inset Formula $f\in\text{Hom}_{\mathcal{C}}(A,B)$
+\end_inset
+
+ is a monomorphism if 
+\begin_inset Formula $\forall Z\in\text{Obj}(\mathcal{C}).\forall\alpha',\alpha"\in\text{Hom}_{\mathcal{C}}(Z,A).$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\left(f\circ\alpha'=f\circ\alpha"\right)\implies\left(\alpha'=\alpha"\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Definition 2.5
+\begin_inset CommandInset label
+LatexCommand label
+name "Definition-2.5"
+
+\end_inset
+
+:
+ 
+\series default
+Let 
+\begin_inset Formula $\mathcal{C}$
+\end_inset
+
+ be a category,
+ A morphism 
+\begin_inset Formula $f\in\text{Hom}_{\mathcal{C}}(A,B)$
+\end_inset
+
+ is an epimorphism if 
+\begin_inset Formula $\forall Z\in\text{Obj}(\mathcal{C}).\forall\beta',\beta"\in\text{Hom}_{\mathcal{C}}(B,Z).$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\left(\beta'\circ f=\beta"\circ f\right)\implies\left(\beta'=\beta"\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Initial and Final Objects 
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Definition 3.1
+\begin_inset CommandInset label
+LatexCommand label
+name "definition-3.1"
+
+\end_inset
+
+:
+ 
+\series default
+Let 
+\begin_inset Formula $\mathcal{C}$
+\end_inset
+
+ be a category.
+ We say that an object 
+\begin_inset Formula $I$
+\end_inset
+
+ of 
+\begin_inset Formula $\mathcal{C}$
+\end_inset
+
+ is 
+\emph on
+initial 
+\emph default
+in 
+\begin_inset Formula $\mathcal{C}$
+\end_inset
+
+ if for every object 
+\begin_inset Formula $A$
+\end_inset
+
+ of 
+\begin_inset Formula $\mathcal{C}$
+\end_inset
+
+,
+ there exists exactly one one morphism from 
+\begin_inset Formula $I$
+\end_inset
+
+ to 
+\begin_inset Formula $A$
+\end_inset
+
+ in 
+\begin_inset Formula $\mathcal{C}$
+\end_inset
+
+ i.e.
+ 
+\begin_inset Formula $\forall A\in\text{Obj}(\mathcal{C}):\text{Hom}_{\mathcal{C}}(I,A)$
+\end_inset
+
+ is a singelton 
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Definition 3.2
+\begin_inset CommandInset label
+LatexCommand label
+name "Definition-3.2"
+
+\end_inset
+
+:
+ 
+\series default
+Let 
+\begin_inset Formula $\mathcal{C}$
+\end_inset
+
+ be a category.
+ We say that an object 
+\begin_inset Formula $F$
+\end_inset
+
+ of 
+\begin_inset Formula $\mathcal{C}$
+\end_inset
+
+ is 
+\emph on
+final 
+\emph default
+in 
+\begin_inset Formula $\mathcal{C}$
+\end_inset
+
+ if for every object 
+\begin_inset Formula $A$
+\end_inset
+
+ of 
+\begin_inset Formula $\mathcal{C}$
+\end_inset
+
+,
+ there exists exactly one one morphism from 
+\begin_inset Formula $A$
+\end_inset
+
+ to 
+\begin_inset Formula $F$
+\end_inset
+
+ in 
+\begin_inset Formula $\mathcal{C}$
+\end_inset
+
+ i.e.
+ 
+\begin_inset Formula $\forall A\in\text{Obj}(\mathcal{C}):\text{Hom}_{\mathcal{C}}(A,F)$
+\end_inset
+
+ is a singelton
+\end_layout
+
+\begin_layout Standard
+Initial and final objects,
+ when they exist,
+ may or may not be unique.
+ 
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Proposition 3.3
+\begin_inset CommandInset label
+LatexCommand label
+name "Proposition-3.3"
+
+\end_inset
+
+:
+ 
+\series default
+Let 
+\begin_inset Formula $\mathcal{C}$
+\end_inset
+
+ be a category 
+\end_layout
+
+\begin_layout Itemize
+If 
+\begin_inset Formula $I_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $I_{2}$
+\end_inset
+
+ are both initial then 
+\begin_inset Formula $I_{1}\cong I_{2}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+If 
+\begin_inset Formula $F_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $F_{2}$
+\end_inset
+
+ are both final then 
+\begin_inset Formula $F_{1}\cong F_{2}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+further,
+ these isomorphisms are uniquely determined.
+ 
+\end_layout
+
+\begin_layout Standard
+We say that 
+\begin_inset Quotes eld
+\end_inset
+
+a construction satisfied a universal property
+\begin_inset Quotes erd
+\end_inset
+
+ when it may be viewed as a terminal object in a category e.g.
+ 
+\begin_inset Quotes eld
+\end_inset
+
+
+\begin_inset Formula $\phi$
+\end_inset
+
+ is universal with respect to the property of mapping of sets
+\begin_inset Quotes erd
+\end_inset
+
+ is synonymous with 
+\begin_inset Quotes eld
+\end_inset
+
+
+\begin_inset Formula $\phi$
+\end_inset
+
+ is initial in the category SET
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Some Universal Properties
+\end_layout
+
+\end_body
+\end_document

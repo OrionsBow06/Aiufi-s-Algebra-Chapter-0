@@ -1,0 +1,1182 @@
+#LyX 2.4 created this file. For more info see https://www.lyx.org/
+\lyxformat 620
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\begin_preamble
+\usepackage{tikz}
+\usepackage{tikz-cd}
+\end_preamble
+\use_default_options true
+\maintain_unincluded_children no
+\language canadian
+\language_package default
+\inputencoding utf8
+\fontencoding auto
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_roman_osf false
+\font_sans_osf false
+\font_typewriter_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\float_placement class
+\float_alignment class
+\paperfontsize default
+\spacing onehalf
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_formatted_ref 0
+\use_minted 0
+\use_lineno 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tablestyle default
+\tracking_changes false
+\output_changes false
+\change_bars false
+\postpone_fragile_content true
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\docbook_table_output 0
+\docbook_mathml_prefix 1
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Definition of Ring 
+\end_layout
+
+\begin_layout Author
+Karan Chauhan
+\end_layout
+
+\begin_layout Date
+2025-06-27
+\end_layout
+
+\begin_layout Section
+Review and Intuition 
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Claim 1.1
+\begin_inset CommandInset label
+LatexCommand label
+name "Claim-1.1"
+
+\end_inset
+
+:
+ 
+\series default
+Given abelian groups 
+\begin_inset Formula $G,H$
+\end_inset
+
+,
+ the set 
+\begin_inset Formula $\text{Hom}_{Ab}(G,H)$
+\end_inset
+
+ is also an abelian group.
+ 
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Proof:
+ 
+\series default
+Given any 
+\begin_inset Formula $\varphi,\phi:G\to H\in\text{Hom}_{Ab}(G,H)$
+\end_inset
+
+ we define a new function as 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+(\varphi+\phi)(a):=\varphi(a)+\phi(a)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+where 
+\begin_inset Formula $a\in G$
+\end_inset
+
+.
+ Thus we want to show that 
+\begin_inset Formula $\varphi+\phi\in\text{Hom}_{Ab}(G,H)$
+\end_inset
+
+,
+ thus 
+\begin_inset Formula $\forall a,b\in G$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+(\varphi+\phi)(a+b)=\varphi(a+b)+\phi(a+b)=\varphi(a)+\varphi(b)+\phi(a)+\phi(b)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\varphi(a)+\varphi(b)+\phi(a)+\phi(b)=\varphi(a)+\phi(a)+\varphi(b)+\phi(b)=(\varphi+\phi)(a)+(\varphi+\phi)(b)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Therefore 
+\begin_inset Formula $(\varphi+\phi)(a+b)=(\varphi+\phi)(a)+(\varphi+\phi)(b)$
+\end_inset
+
+.
+ Hence 
+\begin_inset Formula $\varphi+\phi\in\text{Hom}_{Ab}(G,H)$
+\end_inset
+
+.
+ It is to be noted that 
+\begin_inset Formula $+$
+\end_inset
+
+ is associative/commutative because 
+\begin_inset Formula $+_{H}$
+\end_inset
+
+ is associative/commutative.
+ The trivial homomorphism is the one that maps everything to the identity and teh inverse of 
+\begin_inset Formula $\varphi:G\to H$
+\end_inset
+
+ is defined 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+(\forall a\in G):(-\varphi)(a):=-\varphi(a)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Thus proving that 
+\begin_inset Formula $\text{Hom}_{Ab}(G,H)$
+\end_inset
+
+ is also an abelian group 
+\begin_inset Formula $\square$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Therefore 
+\begin_inset Formula $\forall\alpha,\beta\in\text{End}_{Ab}(G)$
+\end_inset
+
+,
+ there exists two operations 
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $\alpha\circ\beta$
+\end_inset
+
+ by the defination of the category 
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $\alpha+\beta$
+\end_inset
+
+ as shown in 
+\begin_inset CommandInset ref
+LatexCommand labelonly
+reference "Claim-1.1"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+It is to be noted that both 
+\begin_inset Formula $1$
+\end_inset
+
+ and 
+\begin_inset Formula $2$
+\end_inset
+
+ are 
+\begin_inset Quotes eld
+\end_inset
+
+compatible
+\begin_inset Quotes erd
+\end_inset
+
+,
+ thus we build up our intuition for a ring 
+\end_layout
+
+\begin_layout Section
+Ring 
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Definition 2.1
+\begin_inset CommandInset label
+LatexCommand label
+name "definition 2.1"
+
+\end_inset
+
+:
+ 
+\series default
+A 
+\emph on
+ring 
+\emph default
+
+\begin_inset Formula $\left(R,+,\cdot\right)$
+\end_inset
+
+ is an abelian group 
+\begin_inset Formula $(R,+)$
+\end_inset
+
+ endowed with a second binary operation 
+\begin_inset Formula $\cdot$
+\end_inset
+
+ satisfying 
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $(\forall a,s,t\in R):(r\cdot s)\cdot t=r\cdot(s\cdot t)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $(\exists1_{R}\in R).(\forall r\in R):r\cdot1_{R}=r=1_{R}\cdot r$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $(\forall r,s,t\in R):(r+s)\cdot t=r\cdot t+s\cdot t$
+\end_inset
+
+ and 
+\begin_inset Formula $t\cdot(r+s)=t\cdot r+t\cdot s$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+It is to be noted that 
+\begin_inset Formula $1$
+\end_inset
+
+ and 
+\begin_inset Formula $2$
+\end_inset
+
+ together make 
+\begin_inset Formula $R$
+\end_inset
+
+ a monoid 
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Definition 2.2
+\begin_inset CommandInset label
+LatexCommand label
+name "Definition-2.2"
+
+\end_inset
+
+:
+ 
+\series default
+A ring 
+\begin_inset Formula $R$
+\end_inset
+
+ is 
+\emph on
+commutative 
+\emph default
+if 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+(\forall r,s\in R):r\cdot s=s\cdot r
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Definition 2.3
+\begin_inset CommandInset label
+LatexCommand label
+name "Definition-2.3"
+
+\end_inset
+
+:
+ 
+\series default
+An element 
+\begin_inset Formula $a\in R$
+\end_inset
+
+ is a 
+\emph on
+(left) zero divisor 
+\emph default
+if 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+(\exists b\neq0\in R):ab=0
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Proposition 2.4
+\begin_inset CommandInset label
+LatexCommand label
+name "Proposition-2.4"
+
+\end_inset
+
+:
+ 
+\series default
+
+\begin_inset Formula $a\in R$
+\end_inset
+
+ is not a left zero divisor if and only if left multiplication by 
+\begin_inset Formula $a$
+\end_inset
+
+ is an injective function 
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Proof:
+ 
+\series default
+Suppose 
+\begin_inset Formula $a$
+\end_inset
+
+ is not a left zero divisor,
+ then 
+\begin_inset Formula $(\forall b\neq0\in R):ab\neq0$
+\end_inset
+
+,
+ hence suppose for any 
+\begin_inset Formula $b,c\in R$
+\end_inset
+
+ that 
+\begin_inset Formula $ab=ac$
+\end_inset
+
+ then 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\left(ab=ac\right)\implies\left(ab-ac=0\right)\implies\left(a(b-c)=0\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Since 
+\begin_inset Formula $a$
+\end_inset
+
+ is not a left zero divisor,
+ we get that 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\left(b-c=0\right)\implies\left(b=c\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Hence left multiplication by 
+\begin_inset Formula $a$
+\end_inset
+
+ is an injective function.
+ 
+\end_layout
+
+\begin_layout Standard
+Suppose 
+\begin_inset Formula $a$
+\end_inset
+
+ is a left divisor,
+ then 
+\begin_inset Formula $\exists b\neq0\in R$
+\end_inset
+
+ such that 
+\begin_inset Formula $ab=0$
+\end_inset
+
+ and we know that 
+\begin_inset Formula $a\cdot0=0$
+\end_inset
+
+,
+ hence left multiplication by 
+\begin_inset Formula $a$
+\end_inset
+
+ is not an injective function.
+ 
+\begin_inset Formula $\square$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Definition 2.5
+\begin_inset CommandInset label
+LatexCommand label
+name "Definition-2.5"
+
+\end_inset
+
+:
+ 
+\series default
+An 
+\emph on
+integral domain
+\emph default
+ is a nonzero commutative ring such that 
+\begin_inset Formula $\forall a,b\in R$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\left(ab=0\right)\implies\left(a=0\right)\text{or}\left(b=0\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Definition 2.6
+\begin_inset CommandInset label
+LatexCommand label
+name "Definition-2.6"
+
+\end_inset
+
+:
+ 
+\series default
+An element 
+\begin_inset Formula $u\in R$
+\end_inset
+
+ is a left unit if 
+\begin_inset Formula $\exists v\in R$
+\end_inset
+
+ such that 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+uv=1
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+and simillarly is a right unit if 
+\begin_inset Formula $\exists v\in R$
+\end_inset
+
+ such that 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+vu=1
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+note that units are two sided units.
+ 
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Proposition 2.7
+\begin_inset CommandInset label
+LatexCommand label
+name "Proposition-2.7"
+
+\end_inset
+
+:
+ 
+\series default
+
+\begin_inset Formula $u$
+\end_inset
+
+ is a left unit if and only if left multiplication by 
+\begin_inset Formula $u$
+\end_inset
+
+ is a surjective function 
+\begin_inset Formula $\sigma_{u}:R\to R$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Proof:
+ 
+\series default
+Suppose 
+\begin_inset Formula $u$
+\end_inset
+
+ is a left unit.
+ then 
+\begin_inset Formula $\exists v\in R$
+\end_inset
+
+ such that 
+\begin_inset Formula $uv=1$
+\end_inset
+
+,
+ then 
+\begin_inset Formula $\forall a\in R$
+\end_inset
+
+,
+ we get that 
+\begin_inset Formula $\sigma_{u}(va)=a$
+\end_inset
+
+ i.e.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\sigma_{u}:va\to a
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+where 
+\begin_inset Formula $\sigma_{u}(x)=ux$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+Suppose 
+\begin_inset Formula $\sigma_{u}$
+\end_inset
+
+ is surjective,
+ then 
+\begin_inset Formula $\exists v\in R$
+\end_inset
+
+ such that 
+\begin_inset Formula $\sigma_{u}(v)=1$
+\end_inset
+
+ i.e.
+ 
+\begin_inset Formula $uv=1$
+\end_inset
+
+,
+ hence 
+\begin_inset Formula $u$
+\end_inset
+
+ is a left unit.
+ 
+\begin_inset Formula $\square$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Proposition 2.8
+\begin_inset CommandInset label
+LatexCommand label
+name "Proposition-2.8"
+
+\end_inset
+
+:
+ 
+\series default
+If 
+\begin_inset Formula $u$
+\end_inset
+
+ is a left unit,
+ then right multiplication by 
+\begin_inset Formula $u$
+\end_inset
+
+ is injective i.e.
+ 
+\begin_inset Formula $u$
+\end_inset
+
+ is not a right zero divisor.
+ 
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Proof:
+ 
+\series default
+Suppose 
+\begin_inset Formula $u$
+\end_inset
+
+ is a left unit,
+ then 
+\begin_inset Formula $\exists v\in R$
+\end_inset
+
+ such that 
+\begin_inset Formula $uv=1$
+\end_inset
+
+,
+ then 
+\begin_inset Formula $\forall b,c\in R$
+\end_inset
+
+,
+ suppose 
+\begin_inset Formula $bu=cu$
+\end_inset
+
+,
+ then 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\left(bu=cu\right)\implies\left(buv=cuv\right)\implies\left(b=c\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+hence right multiplication is injective wgich is true if and only if 
+\begin_inset Formula $u$
+\end_inset
+
+ is not a right zero divisor by 
+\begin_inset CommandInset ref
+LatexCommand labelonly
+reference "Proposition-2.7"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Proposition 2.9
+\begin_inset CommandInset label
+LatexCommand label
+name "Proposition-2.9"
+
+\end_inset
+
+:
+ 
+\series default
+The inverse of a two sided unit is unique
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Proof:
+ 
+\series default
+Let 
+\begin_inset Formula $u\in R$
+\end_inset
+
+ be a two sided unit then 
+\begin_inset Formula $\exists v,w\in R$
+\end_inset
+
+ such that 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+vu=1
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+uw=1
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+then we get that 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\left(vu=1\right)\implies\left(vuw=w\right)\implies\left(v=w\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Hence proving that the inverse of a two sided unit is unique.
+ 
+\begin_inset Formula $\square$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Definition 2.10
+\begin_inset CommandInset label
+LatexCommand label
+name "Definition-2.10"
+
+\end_inset
+
+:
+ 
+\series default
+A 
+\emph on
+division ring
+\emph default
+ is a ring in which every nonzero element is a two sided unit
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Definition 2.11
+\begin_inset CommandInset label
+LatexCommand label
+name "Definition-2.11"
+
+\end_inset
+
+:
+ 
+\series default
+A field is a nonzero commutative ring 
+\begin_inset Formula $R$
+\end_inset
+
+ in which every non zero element is a unit.
+ 
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Proposition 2.12
+\begin_inset CommandInset label
+LatexCommand label
+name "Proposition-2.12"
+
+\end_inset
+
+:
+ 
+\series default
+Given 
+\begin_inset Formula $R$
+\end_inset
+
+ is a finite commutative ring,
+ 
+\begin_inset Formula $R$
+\end_inset
+
+ is an integral domain if and only if 
+\begin_inset Formula $R$
+\end_inset
+
+ is a field.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Proof:
+ 
+\series default
+Suppose 
+\begin_inset Formula $R$
+\end_inset
+
+ is a field,
+ then we want to show that 
+\begin_inset Formula $\forall a,b\in R$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\left(ab=0\right)\implies\left(a=0\right)\text{or}\left(b=0\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Suppose 
+\begin_inset Formula $\forall a,b\in R$
+\end_inset
+
+,
+ 
+\begin_inset Formula $ab=0$
+\end_inset
+
+ such that atleast one of them is non zero
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+If both of them are zero then the implication is trivially true
+\end_layout
+
+\end_inset
+
+.
+ Suppose that 
+\begin_inset Formula $a$
+\end_inset
+
+ is nonzero,
+ since 
+\begin_inset Formula $R$
+\end_inset
+
+ is a field,
+ we get that 
+\begin_inset Formula $a^{-1}$
+\end_inset
+
+ exists,
+ hence 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\left(a^{-1}\cdot ab=a^{-1}\cdot0\right)\implies\left(b=0\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Suppose 
+\begin_inset Formula $R$
+\end_inset
+
+ is an integral domain,
+ then 
+\begin_inset Formula $\forall a\neq0\in R$
+\end_inset
+
+,
+ 
+\begin_inset Formula $a$
+\end_inset
+
+ is an non-zero-divisor,
+ then multiplication by 
+\begin_inset Formula $a$
+\end_inset
+
+ in 
+\begin_inset Formula $R$
+\end_inset
+
+ is injective by 
+\begin_inset CommandInset ref
+LatexCommand labelonly
+reference "Proposition-2.4"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+,
+ hence it is surjective,
+ as the ring is finite,
+ by the pigeon-hhole principle;
+ hence 
+\begin_inset Formula $a$
+\end_inset
+
+ is a unit,
+ by 
+\begin_inset CommandInset ref
+LatexCommand labelonly
+reference "Proposition-2.7"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+.
+ Thus we have shown that given 
+\begin_inset Formula $R$
+\end_inset
+
+ is a finite commutative ring,
+ 
+\begin_inset Formula $R$
+\end_inset
+
+ is an integral domain if and only if 
+\begin_inset Formula $R$
+\end_inset
+
+ is a field.
+ 
+\begin_inset Formula $\square$
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document
