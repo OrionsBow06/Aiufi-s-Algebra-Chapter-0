@@ -1161,7 +1161,7 @@ Set functions which are compatible with the actions i.e.
 \begin_layout Standard
 \begin_inset Formula 
 \[
-\rho(g,f(a))=f(\rho(g,a))
+\rho'(g,f(a))=f(\rho(g,a))
 \]
 
 \end_inset
@@ -1425,7 +1425,7 @@ begin{tikzcd}
 
 \begin_layout Plain Layout
 
-	&&&&& g 
+	&&&&& a 
 \backslash
 
 \backslash
@@ -1443,9 +1443,9 @@ begin{tikzcd}
 
 \begin_layout Plain Layout
 
-	{(g,a)} &&&&& {(g,
+	{(g,a)} &&&&& {
 \backslash
-phi(a) )} 
+phi(g,(a) )} 
 \backslash
 
 \backslash
@@ -1469,9 +1469,11 @@ rho(g,a)} &&&&& {f(
 \backslash
 rho(g,a))=
 \backslash
-rho'(g,
+rho'
 \backslash
-phi(a))}
+circ 
+\backslash
+phi(g,a)}
 \end_layout
 
 \begin_layout Plain Layout
@@ -1570,11 +1572,64 @@ end{tikzcd}
 
 \begin_layout Standard
 and by the commutative diagram we get that 
-\begin_inset Formula $f(\rho(g,a))=\rho'(g,\phi(a))$
+\begin_inset Formula $f(\rho(g,a))=\rho'\circ\phi(g,a)$
 \end_inset
 
 .
- Hence we an intuition why we consider morphisms to be set functions which are compatible with the actions.
+ Thus intuitively it makes sense for 
+\begin_inset Formula $\phi$
+\end_inset
+
+ to be the function 
+\begin_inset Formula $\text{id}\times f$
+\end_inset
+
+ i.e.
+ the function that maps 
+\begin_inset Formula $(g,a)\to(g,f(a))$
+\end_inset
+
+.
+ Thus we get that 
+\begin_inset Formula $f(\rho(g,a))=\rho'(g,f(a))$
+\end_inset
+
+.
+ It is to be recalled that 
+\begin_inset Formula $\rho$
+\end_inset
+
+ and 
+\begin_inset Formula $\rho'$
+\end_inset
+
+ are actions of 
+\begin_inset Formula $G$
+\end_inset
+
+ on 
+\begin_inset Formula $A$
+\end_inset
+
+.
+ thus it makes complete sense and solid motivation to consider morphisms between objects 
+\begin_inset Formula $(\rho,A)$
+\end_inset
+
+ and 
+\begin_inset Formula $(\rho',A')$
+\end_inset
+
+ to be the set function 
+\begin_inset Formula $f:A\to A'$
+\end_inset
+
+ such that 
+\begin_inset Formula $\rho'(g,f(a))=f(\rho(g,a))$
+\end_inset
+
+.
+ 
 \end_layout
 
 \end_body
