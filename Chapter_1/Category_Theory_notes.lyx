@@ -650,5 +650,762 @@ a construction satisfied a universal property
 Some Universal Properties
 \end_layout
 
+\begin_layout Subsection
+Quotients in SET
+\end_layout
+
+\begin_layout Standard
+Let 
+\begin_inset Formula $\sim$
+\end_inset
+
+ be an equivalence relation defined on a set 
+\begin_inset Formula $A$
+\end_inset
+
+.
+ Then 
+\begin_inset Quotes eld
+\end_inset
+
+the quotient 
+\begin_inset Formula $A/\sim$
+\end_inset
+
+ is universal with respect to the property of mapping 
+\begin_inset Formula $A$
+\end_inset
+
+ to a set in such a way that equivalent elements have the same image
+\begin_inset Quotes erd
+\end_inset
+
+ i.e.
+ given an equivalence relation 
+\begin_inset Formula $\sim$
+\end_inset
+
+ on 
+\begin_inset Formula $A$
+\end_inset
+
+,
+ then there exist an object 
+\begin_inset Formula $A/\sim$
+\end_inset
+
+ in the category equipped with a surjective morphism 
+\begin_inset Formula $\pi_{\sim}:A\to A/\sim$
+\end_inset
+
+ such that 
+\begin_inset Formula $\forall a,b\in A:\left(a\sim b\right)\implies\left(\pi_{\sim}(a)=\pi_{\sim}(b)\right)$
+\end_inset
+
+ and that 
+\series bold
+in the category of all morphisms 
+\begin_inset Formula $f:A\to Z$
+\end_inset
+
+ where 
+\begin_inset Formula $\forall a,b\in A:\left(a\sim b\right)\implies\left(f(a)=f(b)\right)$
+\end_inset
+
+,
+ the morphism 
+\begin_inset Formula $\pi$
+\end_inset
+
+ is an initial object
+\series default
+ i.e.
+ there exists a unique morphism 
+\begin_inset Formula $\tilde{f}:A/\sim\to Z$
+\end_inset
+
+ such that the following diagram commutes 
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+[
+\backslash
+begin{tikzcd}
+\end_layout
+
+\begin_layout Plain Layout
+
+	{A/
+\backslash
+sim} &&&& Z 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+	&& A
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+arrow["{
+\backslash
+exists!
+\backslash
+tilde{f}}"{description},
+ from=1-1,
+ to=1-5]
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+arrow["{
+\backslash
+pi_{
+\backslash
+sim}}"{description},
+ from=3-3,
+ to=1-1]
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+arrow["f"{description},
+ from=3-3,
+ to=1-5]
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tikzcd}
+\backslash
+]
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Products 
+\end_layout
+
+\begin_layout Standard
+Let 
+\begin_inset Formula $\mathcal{C}$
+\end_inset
+
+ be a category.
+ Given objects 
+\begin_inset Formula $A,B\in\text{Obj}(\mathcal{C})$
+\end_inset
+
+,
+ there exists an object 
+\begin_inset Formula $A\times B$
+\end_inset
+
+ in 
+\begin_inset Formula $\mathcal{C}$
+\end_inset
+
+ equipped with projection morphisms 
+\begin_inset Formula $\pi_{A}:A\times B\to A$
+\end_inset
+
+ and 
+\begin_inset Formula $\pi_{B}:A\times B\to B$
+\end_inset
+
+ such that 
+\begin_inset Formula $A\times B$
+\end_inset
+
+ is final in the category of all objects 
+\begin_inset Formula $Z$
+\end_inset
+
+ in 
+\begin_inset Formula $\mathcal{C}$
+\end_inset
+
+ equipped with morphisms 
+\begin_inset Formula $f_{A}:Z\to A$
+\end_inset
+
+ and 
+\begin_inset Formula $f_{B}:Z\to B$
+\end_inset
+
+ i.e.
+ there exists a unique morphism 
+\begin_inset Formula $\sigma:Z\to A\times B$
+\end_inset
+
+ such that the following diagram commutes 
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+[
+\backslash
+begin{tikzcd}
+\end_layout
+
+\begin_layout Plain Layout
+
+	&&& A 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+	Z &&& {A
+\backslash
+times B} 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+	&&& B
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+arrow["{f_A}"{description},
+ from=3-1,
+ to=1-4]
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+arrow["{
+\backslash
+sigma }"{description},
+ from=3-1,
+ to=3-4]
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+arrow["{f_B}"{description},
+ from=3-1,
+ to=5-4]
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+arrow["{
+\backslash
+pi_{A}}"{description},
+ from=3-4,
+ to=1-4]
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+arrow["{
+\backslash
+pi_B}"{description},
+ from=3-4,
+ to=5-4]
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tikzcd}
+\backslash
+]
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Coproducts 
+\end_layout
+
+\begin_layout Standard
+Let 
+\begin_inset Formula $\mathcal{C}$
+\end_inset
+
+ be a category.
+ Let 
+\begin_inset Formula $A,B$
+\end_inset
+
+ be objects of category 
+\begin_inset Formula $\mathcal{C}$
+\end_inset
+
+.
+ Then the coproduct of 
+\begin_inset Formula $A$
+\end_inset
+
+ and 
+\begin_inset Formula $B$
+\end_inset
+
+ is an object 
+\begin_inset Formula $C$
+\end_inset
+
+ in the category 
+\begin_inset Formula $\mathcal{C}$
+\end_inset
+
+ with morphisms 
+\begin_inset Formula $i_{A}:A\to C$
+\end_inset
+
+ and 
+\begin_inset Formula $i_{B}:B\to C$
+\end_inset
+
+ such that in the category of all objects 
+\begin_inset Formula $Z$
+\end_inset
+
+ in 
+\begin_inset Formula $\mathcal{C}$
+\end_inset
+
+ with morphisms 
+\begin_inset Formula $f_{A}:A\to Z$
+\end_inset
+
+ and 
+\begin_inset Formula $f_{B}:B\to Z$
+\end_inset
+
+,
+ 
+\begin_inset Formula $C$
+\end_inset
+
+ is an initial object i.e.
+ there exists a unique morphism 
+\begin_inset Formula $\sigma:C\to Z$
+\end_inset
+
+ such that the following diagram commutes 
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+[
+\backslash
+begin{tikzcd}
+\end_layout
+
+\begin_layout Plain Layout
+
+	A 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+	C &&& Z 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+	B
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+arrow["{i_{A}}"{description},
+ from=1-1,
+ to=3-1]
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+arrow["{f_A}"{description},
+ from=1-1,
+ to=3-4]
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+arrow["{
+\backslash
+sigma }"{description},
+ from=3-1,
+ to=3-4]
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+arrow["{i_B}"{description},
+ from=5-1,
+ to=3-1]
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+arrow["{f_B}"{description},
+ from=5-1,
+ to=3-4]
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tikzcd}
+\backslash
+]
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In SET,
+ the coproduct of two sets 
+\begin_inset Formula $A$
+\end_inset
+
+ and 
+\begin_inset Formula $B$
+\end_inset
+
+ is the disjoint union 
+\begin_inset Formula $A\sqcup B$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Univeral property of free groups 
+\end_layout
+
+\begin_layout Standard
+Given a set 
+\begin_inset Formula $A$
+\end_inset
+
+ we consider the group 
+\begin_inset Formula $F(A)$
+\end_inset
+
+ and thus construct the category 
+\begin_inset Formula $\mathcal{F}^{A}$
+\end_inset
+
+ whose objects are pairs 
+\begin_inset Formula $(j,G)$
+\end_inset
+
+ where 
+\begin_inset Formula $G$
+\end_inset
+
+ is a group and 
+\begin_inset Formula $j:A\to G$
+\end_inset
+
+ is a set function from A to G and morphisms are group homomorphims such that the following diagram commutes as set functions 
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+[
+\backslash
+begin{tikzcd}
+\end_layout
+
+\begin_layout Plain Layout
+
+	{G_1} && {G_2} 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+	& A
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+arrow["{
+\backslash
+varphi }"{description},
+ from=1-1,
+ to=1-3]
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+arrow["{j_1}"{description},
+ from=3-2,
+ to=1-1]
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+arrow["{j_2}"{description},
+ from=3-2,
+ to=1-3]
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tikzcd}
+\backslash
+]
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+A free group is an intial object in this category,
+ i.e.
+ for any group 
+\begin_inset Formula $G$
+\end_inset
+
+ such that there exist a set function 
+\begin_inset Formula $f:A\to G$
+\end_inset
+
+,
+ there exists a unique group homomorphism 
+\begin_inset Formula $\varphi:F(A)\to G$
+\end_inset
+
+ such that the following diagram commutes 
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+[
+\backslash
+begin{tikzcd}
+\end_layout
+
+\begin_layout Plain Layout
+
+	{F(A)} && {G_2} 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+	& A
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+arrow["{
+\backslash
+varphi }"{description},
+ from=1-1,
+ to=1-3]
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+arrow["j"{description},
+ from=3-2,
+ to=1-1]
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+arrow["f"{description},
+ from=3-2,
+ to=1-3]
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tikzcd}
+\backslash
+]
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \end_body
 \end_document
