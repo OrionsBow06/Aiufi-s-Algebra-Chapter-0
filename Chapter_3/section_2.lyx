@@ -1,0 +1,3383 @@
+#LyX 2.4 created this file. For more info see https://www.lyx.org/
+\lyxformat 620
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\begin_preamble
+\usepackage{tikz}
+\usepackage{tikz-cd}
+\end_preamble
+\use_default_options true
+\maintain_unincluded_children no
+\language canadian
+\language_package default
+\inputencoding utf8
+\fontencoding auto
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_roman_osf false
+\font_sans_osf false
+\font_typewriter_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\float_placement class
+\float_alignment class
+\paperfontsize default
+\spacing onehalf
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_formatted_ref 0
+\use_minted 0
+\use_lineno 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tablestyle default
+\tracking_changes false
+\output_changes false
+\change_bars false
+\postpone_fragile_content true
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\docbook_table_output 0
+\docbook_mathml_prefix 1
+\end_header
+
+\begin_body
+
+\begin_layout Title
+The Category RING
+\end_layout
+
+\begin_layout Author
+Karan Chauhan
+\end_layout
+
+\begin_layout Date
+2025-07-07 
+\end_layout
+
+\begin_layout Section
+Ring Homomorphisms 
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Definition 1.1
+\begin_inset CommandInset label
+LatexCommand label
+name "definition-1.1"
+
+\end_inset
+
+:
+ 
+\series default
+If 
+\begin_inset Formula $R,S$
+\end_inset
+
+
+\series bold
+ 
+\series default
+are rings,
+ a function 
+\begin_inset Formula $\varphi:R\to S$
+\end_inset
+
+ is a ring homomporphism if it preserves bith operations and the identity element,
+ i.e.
+ 
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $\forall a,b\in R:\varphi(a+b)=\varphi(a)+\varphi(b)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $\forall a,b\in R:\varphi(a\cdot_{R}b)=\varphi(a)\cdot_{S}\varphi(b)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $\varphi(1_{R})=1_{S}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $\varphi(0_{R})=0_{S}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Definition 1.2
+\begin_inset CommandInset label
+LatexCommand label
+name "definition-1.2"
+
+\end_inset
+
+:
+ 
+\series default
+The category RING is defined as 
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Objects:
+ 
+\series default
+Rings
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Morphisms:
+ 
+\series default
+Ring homomorphisms between rings 
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Proposition 1.3
+\begin_inset CommandInset label
+LatexCommand label
+name "Proposition-1.3"
+
+\end_inset
+
+:
+ 
+\series default
+The zero ring is a final object in RING 
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Proof:
+ 
+\series default
+For any ring 
+\begin_inset Formula $R\in\text{Obj}(\text{RING})$
+\end_inset
+
+,
+ we define the map 
+\begin_inset Formula $\phi:R\to\{0\}$
+\end_inset
+
+ as 
+\begin_inset Formula $\forall a\in R:$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+a\to0
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+It is trivial why the morhphism is unique and is a ring morphism (since tehre is just one element in 
+\begin_inset Formula $\{0\}$
+\end_inset
+
+,
+ every element in 
+\begin_inset Formula $R$
+\end_inset
+
+ must go to 
+\begin_inset Formula $0$
+\end_inset
+
+) 
+\begin_inset Formula $\square$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Proposition 1.4
+\begin_inset CommandInset label
+LatexCommand label
+name "Proposition-1.4"
+
+\end_inset
+
+:
+ 
+\series default
+
+\begin_inset Formula $\mathbb{Z}$
+\end_inset
+
+is intial in RING 
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Proof:
+ 
+\series default
+For any ring 
+\begin_inset Formula $R\in\text{Obj}(\text{RING})$
+\end_inset
+
+,
+ we define 
+\begin_inset Formula $\varphi:\mathbb{Z}\to R$
+\end_inset
+
+ as 
+\begin_inset Formula $\forall n\in\mathbb{Z}:$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\varphi(n)=n\cdot1_{R}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+where 
+\begin_inset Formula $n\cdot1_{R}=\sum_{i=1}^{n}1_{R}$
+\end_inset
+
+.
+ Now we show that 
+\begin_inset Formula $\varphi$
+\end_inset
+
+ is a ring homomorphism.
+ Consider 
+\begin_inset Formula $\forall m,n\in\mathbb{Z}:$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\varphi(m+n)=(m+n)\cdot1_{R}=\sum_{i=1}^{m+n}1_{R}=\sum_{i=1}^{m}1_{R}+\sum_{i=1}^{n}1_{R}=\varphi(m)+\varphi(n)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Simillarly consider 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\varphi(mn)=\sum_{i=1}^{mn}1_{R}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+but 
+\begin_inset Formula $\sum_{i=1}^{mn}1_{R}$
+\end_inset
+
+ is the same as adding 
+\begin_inset Formula $\sum_{i=1}^{n}1_{R}$
+\end_inset
+
+ ,
+\begin_inset Formula $m$
+\end_inset
+
+ times.
+ hence we get that 
+\begin_inset Formula $\sum_{i=1}^{mn}1_{R}=(\sum_{i=1}^{m}1_{R})(\sum_{i=1}^{n}1_{R})$
+\end_inset
+
+,
+ therefore we get that 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\varphi(mn)=(\sum_{i=1}^{m}1_{R})(\sum_{i=1}^{n}1_{R})=\varphi(m)\varphi(n)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+and also note that 
+\begin_inset Formula $\varphi(1)=1\cdot1_{R}=1_{R}$
+\end_inset
+
+.
+ Hence 
+\begin_inset Formula $\varphi$
+\end_inset
+
+ is a ring homomorphism.
+ It is unique since it is determined by teh requirment that 
+\begin_inset Formula $\varphi(1)=1$
+\end_inset
+
+ and by the fact that 
+\begin_inset Formula $\varphi$
+\end_inset
+
+ preserves addition 
+\begin_inset Formula $\square$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Proposition 1.5
+\begin_inset CommandInset label
+LatexCommand label
+name "Proposition-1.5"
+
+\end_inset
+
+:
+ 
+\series default
+Ring homomorphism preserve units 
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Proof:
+ 
+\series default
+Suppose 
+\begin_inset Formula $u\in R$
+\end_inset
+
+ is a unit and 
+\begin_inset Formula $\varphi:R\to S$
+\end_inset
+
+ ia a ring homomorphism,
+ then 
+\begin_inset Formula $\exists v\in R$
+\end_inset
+
+ such that 
+\begin_inset Formula $uv=1$
+\end_inset
+
+,
+ then 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\varphi(u)\varphi(v)=\varphi(uv)=\varphi(1)=1
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+so 
+\begin_inset Formula $\varphi(v)$
+\end_inset
+
+ is a right invers of 
+\begin_inset Formula $\varphi(u)$
+\end_inset
+
+.
+ A simillar argument also shows that 
+\begin_inset Formula $\varphi(v)$
+\end_inset
+
+ is also the left inverse,
+ hence we show that 
+\begin_inset Formula $\varphi(u)$
+\end_inset
+
+ is a unit in 
+\begin_inset Formula $S$
+\end_inset
+
+ 
+\begin_inset Formula $\square$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+It is to be noted that the image of a non zero divisor by a ring homomorphism may well be a zero divisor.
+ Consider the example of the ring morphism 
+\begin_inset Formula $\pi:\mathbb{Z}\to\mathbb{Z}/6\mathbb{Z}$
+\end_inset
+
+ and 
+\begin_inset Formula $2\in\mathbb{Z}$
+\end_inset
+
+ i.e.
+ 
+\begin_inset Formula $2$
+\end_inset
+
+ is not a zero divisor in 
+\begin_inset Formula $\mathbb{Z}$
+\end_inset
+
+ but 
+\begin_inset Formula $\pi(2)=[2]_{6}$
+\end_inset
+
+ is a zero divisor in 
+\begin_inset Formula $\mathbb{Z}/6\mathbb{Z}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Section
+Universal property of polynomial rings 
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Definition 2.1
+\begin_inset CommandInset label
+LatexCommand label
+name "definition-2.1"
+
+\end_inset
+
+:
+ 
+\series default
+Let 
+\begin_inset Formula $R$
+\end_inset
+
+ be a ring.
+ A polynomial 
+\begin_inset Formula $f(x)$
+\end_inset
+
+ in the indeterminate 
+\begin_inset Formula $x$
+\end_inset
+
+ and with coefficients in 
+\begin_inset Formula $R$
+\end_inset
+
+ is a finite linear combination of nonnegative 
+\begin_inset Quotes eld
+\end_inset
+
+powers
+\begin_inset Quotes erd
+\end_inset
+
+ of 
+\begin_inset Formula $x$
+\end_inset
+
+ with coefficients in 
+\begin_inset Formula $R$
+\end_inset
+
+ i.e.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+f(x)=\sum_{i\ge0}a_{i}x^{i}=a_{0}+a_{1}x+a_{2}x^{2}+...
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+where all 
+\begin_inset Formula $a_{i}\in R$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Definition 2.2
+\begin_inset CommandInset label
+LatexCommand label
+name "Definition-2.2"
+
+\end_inset
+
+:
+ 
+\series default
+give a set 
+\begin_inset Formula $A=\{\alpha_{1},...,\alpha_{n}\}$
+\end_inset
+
+ of order 
+\begin_inset Formula $n$
+\end_inset
+
+,
+ we define the category 
+\begin_inset Formula $R_{A}$
+\end_inset
+
+as 
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Objects:
+ 
+\series default
+
+\begin_inset Formula $(j,R)$
+\end_inset
+
+ where 
+\begin_inset Formula $R$
+\end_inset
+
+ is a commutative ring and 
+\begin_inset Formula $j:A\to R$
+\end_inset
+
+ is a set function 
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Morphisms:
+ 
+\series default
+Morphism from 
+\begin_inset Formula $(j_{1},R_{1})\to(j_{2},R_{2})$
+\end_inset
+
+ are ring morphisms 
+\begin_inset Formula $\varphi$
+\end_inset
+
+ such that 
+\begin_inset Formula $j_{2}=\varphi\circ j_{1}$
+\end_inset
+
+as set functions or the following diagram commutes as set function 
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+[
+\backslash
+begin{tikzcd}
+\end_layout
+
+\begin_layout Plain Layout
+
+	{R_1} &&& {R_2} 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+	A
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+arrow["{
+\backslash
+varphi }"{description},
+ from=1-1,
+ to=1-4]
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+arrow["{j_1}"{description},
+ from=3-1,
+ to=1-1]
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+arrow["{j_2}"{description},
+ from=3-1,
+ to=1-4]
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tikzcd}
+\backslash
+]
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Example:
+ 
+\begin_inset Formula $(i,\mathbb{Z}[x_{1},..,x_{n}])$
+\end_inset
+
+ 
+\series default
+is an object in 
+\begin_inset Formula $R_{A}$
+\end_inset
+
+ where 
+\begin_inset Formula $i:A\to\mathbb{Z}[x_{1},..,x_{n}]$
+\end_inset
+
+ is the set function that sends 
+\begin_inset Formula $\forall\alpha_{k}\in A$
+\end_inset
+
+ as 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\alpha_{k}\to x_{k}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+where 
+\begin_inset Formula $x_{k}$
+\end_inset
+
+ is the plain polynomial 
+\begin_inset Formula $x_{k}$
+\end_inset
+
+ in the ring 
+\begin_inset Formula $\mathbb{Z}[x_{1},..,x_{n}]$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Proposition 2.3
+\begin_inset CommandInset label
+LatexCommand label
+name "Proposition-2.3"
+
+\end_inset
+
+:
+ 
+\series default
+
+\begin_inset Formula $(i,\mathbb{Z}[x_{1},..,x_{n}])$
+\end_inset
+
+ is initial in 
+\begin_inset Formula $R_{A}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Proof:
+ 
+\series default
+Thus given 
+\begin_inset Formula $(j,R)\in\text{Obj}(R_{A})$
+\end_inset
+
+,
+ we want to show that there exists a unique ring morphism 
+\begin_inset Formula $\varphi:\mathbb{Z}[x_{1},..,x_{n}]\to R$
+\end_inset
+
+ such that 
+\begin_inset Formula $\varphi\circ i=j$
+\end_inset
+
+ i.e.
+ the following diagram commutes 
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+[
+\backslash
+begin{tikzcd}
+\end_layout
+
+\begin_layout Plain Layout
+
+	{
+\backslash
+mathbb{Z}[x_{1},..,x_{n}]} &&& R 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+	A
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+arrow["{
+\backslash
+varphi }"{description},
+ from=1-1,
+ to=1-4]
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+arrow["i"{description},
+ from=3-1,
+ to=1-1]
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+arrow["j"{description},
+ from=3-1,
+ to=1-4]
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tikzcd}
+\backslash
+]
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Consider 
+\begin_inset Formula $\forall(j,R)\in\text{Obj}(R_{A})$
+\end_inset
+
+,
+ we define 
+\begin_inset Formula $\varphi:\mathbb{Z}[x_{1},..,x_{n}]\to R$
+\end_inset
+
+ as 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\sum m_{i_{1}...i_{n}}x_{1}^{i_{1}}...x_{n}^{i_{n}}\to\sum\iota(m_{i_{1}...i_{n}})j(\alpha_{1})^{i_{1}}...j(\alpha_{n})^{i_{n}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+where 
+\begin_inset Formula $\iota:\mathbb{Z}\to R$
+\end_inset
+
+ is the unique ring homomorphism,
+ since 
+\begin_inset Formula $\mathbb{Z}$
+\end_inset
+
+ is an initial in RING.
+ To elaborate on the working of 
+\begin_inset Formula $\varphi$
+\end_inset
+
+,
+ 
+\begin_inset Formula $\forall i\in\{1,...,n\}$
+\end_inset
+
+ it sends 
+\begin_inset Formula $x_{i}\to j(a_{i})$
+\end_inset
+
+ and the coefficient to what it would be by the initial morphism.
+ The morphism 
+\begin_inset Formula $\varphi$
+\end_inset
+
+ is unique because 
+\begin_inset Formula $\iota$
+\end_inset
+
+ is unique.
+ Now we just have to show that 
+\begin_inset Formula $\varphi$
+\end_inset
+
+ is a ring homomorphism.
+ For any two functions 
+\begin_inset Formula $f,g\in\mathbb{Z}[x_{1},..,x_{n}]$
+\end_inset
+
+ we consider 
+\begin_inset Formula $\varphi(f+g)$
+\end_inset
+
+ where 
+\begin_inset Formula $f=$
+\end_inset
+
+
+\begin_inset Formula $\sum m_{i_{1}...i_{n}}x_{1}^{i_{1}}...x_{n}^{i_{n}}$
+\end_inset
+
+ and 
+\begin_inset Formula $g=\sum d_{i_{1}...i_{n}}x_{1}^{i_{1}}...x_{n}^{i_{n}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\varphi(f+g)=\varphi(\sum m_{i_{1}...i_{n}}x_{1}^{i_{1}}...x_{n}^{i_{n}}+\sum d_{i_{1}...i_{n}}x_{1}^{i_{1}}...x_{n}^{i_{n}})=\varphi(\sum(m_{i_{1}...i_{n}}+d_{i_{1}...i_{n}})x_{1}^{i_{1}}...x_{n}^{i_{n}})
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\varphi(\sum(m_{i_{1}...i_{n}}+d_{i_{1}...i_{n}})x_{1}^{i_{1}}...x_{n}^{i_{n}})=\sum\iota(m_{i_{1}...i_{n}}+d_{i_{1}...i_{n}})j(\alpha_{1})^{i_{1}}...j(\alpha_{n})^{i_{n}}=
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+=\sum\left(\iota(m_{i_{1}...i_{n}})+\iota(d_{i_{1}...i_{n}})\right)j(\alpha_{1})^{i_{1}}...j(\alpha_{n})^{i_{n}}=\sum\left(\iota(m_{i_{1}...i_{n}})+\iota(d_{i_{1}...i_{n}})\right)j(\alpha_{1})^{i_{1}}...j(\alpha_{n})^{i_{n}}=
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+=\sum\iota(m_{i_{1}...i_{n}})j(\alpha_{1})^{i_{1}}...j(\alpha_{n})^{i_{n}}+\sum\iota(d_{i_{1}...i_{n}})j(\alpha_{1})^{i_{1}}...j(\alpha_{n})^{i_{n}}=\varphi(f)+\varphi(g)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+A more techincal proof is needed to show that the morphism respects multiplication as well.
+ Because of it's technicallity,
+ it has been explained using an example,
+ consider 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\varphi[(a+x)(b+x^{2})]=\varphi[ab+bx+ax^{2}+x^{3}]=\iota(ab)+\iota(b)j(\alpha)+\iota(a)j(\alpha)^{2}+j(\alpha)^{3}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+=\iota(a)\iota(b)+\iota(b)j(\alpha)+\iota(a)j(\alpha)^{2}+j(\alpha)^{3}=\iota(a)\left[\iota(b)+j(\alpha)^{2}\right]+j(\alpha)\left[\iota(b)+j(\alpha)^{2}\right]
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+=\iota(a)\left[\iota(b)+j(\alpha)^{2}\right]+j(\alpha)\left[\iota(b)+j(\alpha)^{2}\right]=\left[\iota(a)+j(\alpha)\right]\left[\iota(b)+j(\alpha)^{2}\right]=\varphi(a+x)\varphi(b+x^{2})
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+And it is obvious that 
+\begin_inset Formula $\varphi(1)=1$
+\end_inset
+
+ as 
+\begin_inset Formula $\varphi(1)=\varphi(1x_{1}^{0}...x_{n}^{0})=\iota(1)j(\alpha_{1})^{0}...j(\alpha_{n})^{0}=1$
+\end_inset
+
+ and by defination of 
+\begin_inset Formula $\varphi$
+\end_inset
+
+,
+ we get that 
+\begin_inset Formula $\varphi\circ i=j$
+\end_inset
+
+,
+ thus we have shown that 
+\begin_inset Formula $(i,\mathbb{Z}[x_{1},..,x_{n}])$
+\end_inset
+
+ is initial in 
+\begin_inset Formula $R_{A}$
+\end_inset
+
+.
+ 
+\begin_inset Formula $\square$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Example 2.4
+\begin_inset CommandInset label
+LatexCommand label
+name "Example-2.4"
+
+\end_inset
+
+:
+ 
+\series default
+We fix 
+\begin_inset Formula $\alpha:R\to S$
+\end_inset
+
+ is a ring homomorphism.
+ Let 
+\begin_inset Formula $s\in S$
+\end_inset
+
+ be an element commuting with 
+\begin_inset Formula $\alpha(r)$
+\end_inset
+
+ for all 
+\begin_inset Formula $r\in R$
+\end_inset
+
+ i.e.
+ 
+\begin_inset Formula $s\in S$
+\end_inset
+
+ such that 
+\begin_inset Formula $\forall t\in\text{im}(\alpha):st=ts$
+\end_inset
+
+.
+ Then there is a unique ring homomorphism 
+\begin_inset Formula $\overline{\alpha}:R[x]\to S$
+\end_inset
+
+ defined as 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\sum r_{i}x^{i}\to\sum\alpha(r_{i})s^{i}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\overline{\alpha}$
+\end_inset
+
+ is a ring homomorphism by the same argument as seen in 
+\begin_inset CommandInset ref
+LatexCommand labelonly
+reference "Proposition-2.3"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+.
+ A special note is needed on the condition required.
+ For 
+\begin_inset Formula $\overline{\alpha}$
+\end_inset
+
+ to exist,
+ there must exist 
+\begin_inset Formula $s\in S$
+\end_inset
+
+ such that 
+\begin_inset Formula $\forall t\in\text{im}(\alpha):st=ts$
+\end_inset
+
+,
+ it must be the case for 
+\begin_inset Formula $\overline{\alpha}$
+\end_inset
+
+ to be well defined,
+ other wise the mapping wouldn't make sense since we don't know if 
+\begin_inset Formula $\alpha(r_{i})s^{i}$
+\end_inset
+
+ means 
+\begin_inset Formula $\alpha(r_{i})\cdot s\cdot s...s$
+\end_inset
+
+ or 
+\begin_inset Formula $s\cdot\alpha(r_{i})\cdot s...\cdot s$
+\end_inset
+
+ or any other permutation.
+ It is also to be notes that such an 
+\begin_inset Formula $s$
+\end_inset
+
+ always exists by letting 
+\begin_inset Formula $s=1_{S}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+Thus we get an evaluation map for polynomials over commutative rings as follows:
+ given 
+\begin_inset Formula $f(x)=\sum_{i\ge0}a_{i}x^{i}\in R[x],\forall r\in R$
+\end_inset
+
+ determines an element 
+\begin_inset Formula $f(r)=\sum_{i\ge0}a_{i}r^{i}$
+\end_inset
+
+ which may be viewed as 
+\begin_inset Formula $\overline{\alpha}(f(x))$
+\end_inset
+
+ where 
+\begin_inset Formula $\overline{\alpha}$
+\end_inset
+
+ is obtained as in 
+\begin_inset CommandInset ref
+LatexCommand labelonly
+reference "Example-2.4"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+ with 
+\begin_inset Formula $\alpha:=Id:R\to R$
+\end_inset
+
+ and 
+\begin_inset Formula $s:=r$
+\end_inset
+
+.
+ The construction of the evaluation function explains why we consider commutative rings,
+ i.e.
+ for the evaluation function to be defined for every element in the ring,
+ every element must commute with every other element in the ring and hence the ring must be commutative.
+ Therefore every polynomial 
+\begin_inset Formula $f(x)$
+\end_inset
+
+ determines a function 
+\begin_inset Formula $f:R\to R$
+\end_inset
+
+ by 
+\begin_inset Formula $r\to f(r)$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Section
+Monomorphisms and Epimorphisms 
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Definition 3.1
+\begin_inset CommandInset label
+LatexCommand label
+name "Definition-3.1"
+
+\end_inset
+
+:
+ 
+\series default
+
+\begin_inset Formula $\ker$
+\end_inset
+
+ of a ring homomorphism 
+\begin_inset Formula $\varphi:R\to S$
+\end_inset
+
+ is 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\ker\varphi:=\{r\in R\vert\varphi(r)=0\}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+It is to be noted that 
+\begin_inset Formula $\ker\varphi$
+\end_inset
+
+ cannot be a subring in any resonable sense,
+ since 
+\begin_inset Formula $1_{R}\not\in\ker\varphi$
+\end_inset
+
+ as 
+\begin_inset Formula $\varphi(1_{R})=1_{S}$
+\end_inset
+
+,
+ but 
+\begin_inset Formula $\ker\varphi$
+\end_inset
+
+ is a group.
+ 
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Proposition 3.2
+\begin_inset CommandInset label
+LatexCommand label
+name "Proposition-3.2"
+
+\end_inset
+
+:
+ 
+\series default
+Fix a ring morphism 
+\begin_inset Formula $\varphi:R\to S$
+\end_inset
+
+,
+ then the following statements are equivalent 
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $\varphi$
+\end_inset
+
+ is a monomorphism 
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $\ker\varphi=\{0\}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $\varphi$
+\end_inset
+
+ is injective (as a set function)
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Proof:
+ 
+\series default
+
+\begin_inset Formula $(1\implies2)$
+\end_inset
+
+ Assume 
+\begin_inset Formula $\varphi:R\to S$
+\end_inset
+
+ ia a monomorphims and 
+\begin_inset Formula $r\in\ker\varphi$
+\end_inset
+
+,
+ then 
+\begin_inset Formula $\forall T\in\text{Obj}(\text{RING}).\forall\alpha',\alpha"\in\text{Hom}_{\text{RING}}(T,R)$
+\end_inset
+
+:
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\left(\varphi\circ\alpha'=\varphi\circ\alpha"\right)\implies\left(\alpha'=\alpha"\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+and we also know that since 
+\begin_inset Formula $r\in\ker(\varphi)$
+\end_inset
+
+,
+ 
+\begin_inset Formula $\varphi(r)=0$
+\end_inset
+
+,
+ hence let 
+\begin_inset Formula $T=R[x]$
+\end_inset
+
+ and consider the evaluation morphisms 
+\begin_inset Formula $ev_{r}:\mathbb{Z}[x]\to R$
+\end_inset
+
+ and 
+\begin_inset Formula $ev_{0}:\mathbb{Z}[x]\to R$
+\end_inset
+
+,
+ where 
+\begin_inset Formula $ev_{r}$
+\end_inset
+
+ is the evaluation at 
+\begin_inset Formula $r$
+\end_inset
+
+ and 
+\begin_inset Formula $ev_{0}$
+\end_inset
+
+ is the evaluation at 
+\begin_inset Formula $0$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+[
+\backslash
+begin{tikzcd}
+\end_layout
+
+\begin_layout Plain Layout
+
+	{
+\backslash
+mathbb{Z}[x]} && R && S
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+arrow["{ev_r}"',
+ from=1-1,
+ to=1-3]
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+arrow["{ev_0}",
+ shift left=3,
+ from=1-1,
+ to=1-3]
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+arrow["{
+\backslash
+varphi }",
+ from=1-3,
+ to=1-5]
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tikzcd}
+\backslash
+]
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Thus for 
+\begin_inset Formula $f(x)=x\in\mathbb{Z}[x]$
+\end_inset
+
+,
+ we get that 
+\begin_inset Formula $ev_{r}(x)=r$
+\end_inset
+
+ and 
+\begin_inset Formula $ev_{0}(x)=0$
+\end_inset
+
+,
+ then we get that 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\varphi\circ ev_{r}(x)=\varphi(r)=0
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\varphi\circ ev_{0}(x)=\varphi(0)=0
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Hence we get that 
+\begin_inset Formula $\varphi\circ ev_{r}(x)=\varphi\circ ev_{0}(x)$
+\end_inset
+
+.
+ Since 
+\begin_inset Formula $\varphi$
+\end_inset
+
+ is a monomorphism,
+ we get that 
+\begin_inset Formula $ev_{r}(x)=ev_{0}(x)$
+\end_inset
+
+,
+ hence we get that 
+\begin_inset Formula $r=0$
+\end_inset
+
+.
+ Therefore 
+\begin_inset Formula $\ker\varphi=\{0\}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $(2\implies3)$
+\end_inset
+
+ We assume that 
+\begin_inset Formula $\ker\varphi=\{0\}$
+\end_inset
+
+,
+ then 
+\begin_inset Formula $\forall r,s\in R$
+\end_inset
+
+,
+ we suppose that 
+\begin_inset Formula $\varphi(r)=\varphi(s)$
+\end_inset
+
+,
+ then we get that 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\left(\varphi(r)=\varphi(s)\right)\implies\left(\varphi(r)-\varphi(s)=0\right)\implies\left(\varphi(r-s)=0\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Since 
+\begin_inset Formula $\ker\varphi=\{0\},$
+\end_inset
+
+we get that 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\left(r-s=0\right)\implies\left(r=s\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Hence we have shown that given 
+\begin_inset Formula $\ker\varphi=\{0\},$
+\end_inset
+
+
+\begin_inset Formula $\varphi$
+\end_inset
+
+ is injective as a set function
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\left(3\implies1\right)$
+\end_inset
+
+We assume that 
+\begin_inset Formula $\varphi$
+\end_inset
+
+ is injective,
+ we want to show that 
+\begin_inset Formula $\varphi$
+\end_inset
+
+ is a monomorphim i.e.
+ 
+\begin_inset Formula $\forall T\in\text{Obj}(\text{RING}),\forall\alpha,\alpha'\in\text{Hom}_{\text{RING}}(T,R):\left(\varphi\circ\alpha=\varphi\circ\alpha'\right)\implies\left(\alpha=\alpha'\right)$
+\end_inset
+
+.
+ Then suppose 
+\begin_inset Formula $\forall T\in\text{Obj}(\text{RING}),\forall\alpha,\alpha'\in\text{Hom}_{\text{RING}}(T,R),\forall t\in T$
+\end_inset
+
+,
+ we assume that 
+\begin_inset Formula $\varphi\circ\alpha(t)=\varphi\circ\alpha'(t)$
+\end_inset
+
+.
+ Since 
+\begin_inset Formula $\varphi$
+\end_inset
+
+ is injective,
+ we get that 
+\begin_inset Formula $\forall t\in T:\alpha(t)=\alpha'(t)$
+\end_inset
+
+,
+ thus we have shown that given 
+\begin_inset Formula $\varphi$
+\end_inset
+
+ and injective ring homomorphism,
+ then 
+\begin_inset Formula $\varphi$
+\end_inset
+
+ is a monomorphism.
+ Thus showing that the three statements are equivalent.
+ 
+\begin_inset Formula $\square$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Definition 3.3
+\begin_inset CommandInset label
+LatexCommand label
+name "Definition-3.3"
+
+\end_inset
+
+:
+ 
+\series default
+A 
+\emph on
+subring 
+\emph default
+
+\begin_inset Formula $S$
+\end_inset
+
+ of a ring 
+\begin_inset Formula $R$
+\end_inset
+
+ is a ring whose underlying set is a subset of 
+\begin_inset Formula $R$
+\end_inset
+
+ and the inclusion function 
+\begin_inset Formula $S\xhookrightarrow{}R$
+\end_inset
+
+ is a ring homomorphism.
+ 
+\end_layout
+
+\begin_layout Standard
+It is to be noted that teh zero ring is not a subring of a nonzero ring 
+\begin_inset Formula $R$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Proposition 3.4
+\begin_inset CommandInset label
+LatexCommand label
+name "Proposition-3.4"
+
+\end_inset
+
+:
+ 
+\series default
+An epimorphism in RING need not be surjective.
+ 
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Proof:
+ 
+\series default
+Consider the inclusion homomorphism 
+\begin_inset Formula $\iota:\mathbb{Z}\to\mathbb{Q}$
+\end_inset
+
+.
+ It is obvius that 
+\begin_inset Formula $\iota$
+\end_inset
+
+ is not surjective,
+ hence we want to show that 
+\begin_inset Formula $\iota$
+\end_inset
+
+ is an epimorphism.
+ Thus we consider for any 
+\begin_inset Formula $R\in\text{Obj}(\text{RING})$
+\end_inset
+
+,
+\begin_inset Formula $\forall\alpha_{1},\alpha_{2}\in\text{Hom}_{\text{RING}}(\mathbb{Q},R)$
+\end_inset
+
+ such that 
+\begin_inset Formula $\alpha_{1}\circ\iota=\alpha_{2}\circ\iota$
+\end_inset
+
+.
+ Thus we argue that the ring morphism 
+\begin_inset Formula $\forall i\in\{1,2\}:\alpha_{i}\circ\iota:\mathbb{Z}\to R$
+\end_inset
+
+.
+ Since 
+\begin_inset Formula $\mathbb{Z}$
+\end_inset
+
+ is an initial in RING,
+ there must exactly be only one function 
+\begin_inset Formula $\alpha:\mathbb{Z\to}R$
+\end_inset
+
+.
+ Thus we get that 
+\begin_inset Formula $\alpha_{i}\circ\iota=\alpha$
+\end_inset
+
+.
+ The morhism 
+\begin_inset Formula $\iota$
+\end_inset
+
+ is an inclusion function and thus doesn't do anyting to the integer input,
+ thus we get that 
+\begin_inset Formula $\forall n\in\mathbb{Z}:\alpha_{i}(n)=\alpha(n)$
+\end_inset
+
+.
+ We extend this to 
+\begin_inset Formula $\mathbb{Q}$
+\end_inset
+
+ as follows,
+ we know that 
+\begin_inset Formula $\forall k\in\mathbb{Q}$
+\end_inset
+
+,
+ 
+\begin_inset Formula $k$
+\end_inset
+
+ can be written as 
+\begin_inset Formula $\frac{p}{q}$
+\end_inset
+
+ for integers where 
+\begin_inset Formula $\frac{1}{q}$
+\end_inset
+
+ is the multiplucative inverse of the element 
+\begin_inset Formula $q$
+\end_inset
+
+ in 
+\begin_inset Formula $\mathbb{Z}$
+\end_inset
+
+.
+ and since 
+\begin_inset Formula $\alpha$
+\end_inset
+
+ is a ring homomorphism,
+ we get that 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\alpha(\frac{p}{q})=\alpha(p)\alpha(\frac{1}{q})=\alpha(p)\alpha(q)^{-1}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Since 
+\begin_inset Formula $\forall n\in\mathbb{Z}:\alpha_{i}(n)=\alpha(n)$
+\end_inset
+
+,
+ we get that 
+\begin_inset Formula $\forall\frac{p}{q}\in\mathbb{Q}:\alpha_{i}(\frac{p}{q})=\alpha(\frac{p}{q})$
+\end_inset
+
+.
+ Therefore showing that as morphism from 
+\begin_inset Formula $\mathbb{Q}$
+\end_inset
+
+ to 
+\begin_inset Formula $R$
+\end_inset
+
+,
+ 
+\begin_inset Formula $\alpha_{1}=\alpha_{2}$
+\end_inset
+
+.
+ Thus showing that 
+\begin_inset Formula $\iota$
+\end_inset
+
+ is an epimorphism.
+ 
+\begin_inset Formula $\square$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Therefore in RING,
+ a morphism can be both a monomorphism and an epimorphism but may not be an isomorphism.
+\end_layout
+
+\begin_layout Section
+Products 
+\end_layout
+
+\begin_layout Standard
+If 
+\begin_inset Formula $R_{1},R_{2}$
+\end_inset
+
+ are rings then 
+\begin_inset Formula $R_{1}\times R_{2}$
+\end_inset
+
+ may be defined by endowing the direct product of groups 
+\begin_inset Formula $R_{1}\times R_{2}$
+\end_inset
+
+ with component wise multiplicaton.
+ Thus 
+\begin_inset Formula $\forall a_{1},a_{2}\in R_{1},\forall b_{1},b_{2}\in R_{2}:$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+(a_{1},b_{1})+(a_{2},b_{2}):=(a_{1}+a_{2},b_{1}+b_{2})
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+(a_{1},b_{1})\cdot(a_{2},b_{2}):=(a_{1}\cdot a_{2},b_{1}\cdot b_{2})
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+with the multiplicative identit being 
+\begin_inset Formula $(1_{R_{1}},1_{R_{2}})$
+\end_inset
+
+ and the additive identity being 
+\begin_inset Formula $(0_{R_{1}},0_{R_{2}})$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Proposition 4.1
+\begin_inset CommandInset label
+LatexCommand label
+name "Proposition-4.1"
+
+\end_inset
+
+:
+
+\series default
+ 
+\begin_inset Formula $R_{1}\times R_{2}$
+\end_inset
+
+ as defined above is a categorical product in RING.
+ 
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Proof:
+ 
+\series default
+Since we extended the direct product in groups 
+\begin_inset Formula $R_{1}\times R_{2}$
+\end_inset
+
+ with an extra binary operation,
+ we just have to check that all the morphisms as defined in the dorect product of Grp also respect the new binary operation added.
+ We first of all review the functions defined using the following commutativ diagrams:
+ the first diagram shows the structure of the product as defined in Grp
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+[
+\backslash
+begin{tikzcd}
+\end_layout
+
+\begin_layout Plain Layout
+
+	&&& {R_1} 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+	A &&& {R_1
+\backslash
+times R_2} 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+	&&& {R_2}
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+arrow["{
+\backslash
+varphi_{R_1}}"{description},
+ from=3-1,
+ to=1-4]
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+arrow["{
+\backslash
+varphi_{R_1}
+\backslash
+times 
+\backslash
+varphi_{R_2}}"{description},
+ from=3-1,
+ to=3-4]
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+arrow["{
+\backslash
+varphi_{R_2}}"{description},
+ from=3-1,
+ to=5-4]
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+arrow["{
+\backslash
+pi_{R_1}}"{description},
+ from=3-4,
+ to=1-4]
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+arrow["{
+\backslash
+pi_{R_2}}"{description},
+ from=3-4,
+ to=5-4]
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tikzcd}
+\backslash
+]
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The following diagram shows what the morphisms defined do to elements in the groups
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+[
+\backslash
+begin{tikzcd}
+\end_layout
+
+\begin_layout Plain Layout
+
+	&&& {
+\backslash
+varphi_{R_1}(a)=
+\backslash
+pi_{R_1}(
+\backslash
+varphi_{R_1}(a),
+\backslash
+varphi_{R_2}(a))} 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+	a &&& {(
+\backslash
+varphi_{R_1}(a),
+\backslash
+varphi_{R_2}(a))} 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+	&&& {
+\backslash
+varphi_{R_2}(a)=
+\backslash
+pi_{R_2}(
+\backslash
+varphi_{R_1}(a),
+\backslash
+varphi_{R_2}(a))}
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+arrow["{
+\backslash
+varphi_{R_1}}"{description},
+ from=3-1,
+ to=1-4]
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+arrow["{
+\backslash
+varphi_{R_1}
+\backslash
+times 
+\backslash
+varphi_{R_2}}"{description},
+ from=3-1,
+ to=3-4]
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+arrow["{
+\backslash
+varphi_{R_2}}"{description},
+ from=3-1,
+ to=5-4]
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+arrow["{
+\backslash
+pi_{R_1}}"{description},
+ from=3-4,
+ to=1-4]
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+arrow["{
+\backslash
+pi_{R_2}}"{description},
+ from=3-4,
+ to=5-4]
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tikzcd}
+\backslash
+]
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+First we check if 
+\begin_inset Formula $\forall i\in\{1,2\}:\pi_{R_{i}}:R_{1}\times R_{2}\to R_{i}$
+\end_inset
+
+ is a ring homomorphism i.e.
+ it also respects the new multiplication operation defined.
+ (it already respects teh addition operation becaus 
+\begin_inset Formula $(R_{i},+)$
+\end_inset
+
+ ia an abelian group).
+ Thus consider 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\pi_{R_{1}}\left((a_{1},b_{1})\cdot(a_{2},b_{2})\right)=\pi_{R_{1}}\left((a_{1}a_{2},b_{1}b_{2})\right)=a_{1}a_{2}=\pi_{R_{1}}\left(a_{1},b_{1}\right)\cdot\pi_{R_{1}}\left(a_{2},b_{2}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+and 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\pi_{R_{1}}(1_{R_{1}},1_{R_{2}})=1_{R_{1}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Simillarly
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\pi_{R_{2}}\left((a_{1},b_{1})\cdot(a_{2},b_{2})\right)=\pi_{R_{2}}\left((a_{1}a_{2},b_{1}b_{2})\right)=b_{1}b_{2}=\pi_{R_{2}}\left(a_{1},b_{1}\right)\cdot\pi_{R_{2}}\left(a_{2},b_{2}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+and 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\pi_{R_{2}}(1_{R_{1}},1_{R_{2}})=1_{R_{2}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Thus 
+\begin_inset Formula $\pi_{R_{1}},\pi_{R_{2}}$
+\end_inset
+
+ are ring homomorphims.
+ Now we check that for ring homomrphisms 
+\begin_inset Formula $\varphi_{R_{1}},\varphi_{R_{2}}$
+\end_inset
+
+,
+ the unique morphism 
+\begin_inset Formula $\varphi_{R_{1}}\times\varphi_{R_{2}}:A\to R_{1}\times R_{2}$
+\end_inset
+
+ is a ring homomorphism.
+ Hence consider 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\varphi_{R_{1}}\times\varphi_{R_{2}}\left(ab\right)=\left(\varphi_{R_{1}}(ab),\varphi_{R_{2}}(ab)\right)=\left(\varphi_{R_{1}}(a)\varphi_{R_{1}}(b),\varphi_{R_{2}}(a)\varphi_{R_{2}}(b)\right)=\left(\varphi_{R_{1}}(a),\varphi_{R_{2}}(a)\right)\left(\varphi_{R_{1}}(b),\varphi_{R_{2}}(b)\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+=\left(\varphi_{R_{1}}(a),\varphi_{R_{2}}(a)\right)\left(\varphi_{R_{1}}(b),\varphi_{R_{2}}(b)\right)=\varphi_{R_{1}}\times\varphi_{R_{2}}(a)\cdot\varphi_{R_{1}}\times\varphi_{R_{2}}(b)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+and 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\varphi_{R_{1}}\times\varphi_{R_{2}}\left(1_{A}\right)=\left(\varphi_{R_{1}}(1_{A}),\varphi_{R_{2}}(1_{A})\right)=\left(1_{R_{1}},1_{R_{2}}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Thus 
+\begin_inset Formula $\varphi_{R_{1}}\times\varphi_{R_{2}}:A\to R_{1}\times R_{2}$
+\end_inset
+
+ is a ring homomorphism.
+ The commutativity of the diagram and uniquness of the morphism follows from the same argument as in Grp.
+ Thus we have shown that 
+\begin_inset Formula $R_{1}\times R_{2}$
+\end_inset
+
+ as defined above is a categorical product in RING.
+ 
+\begin_inset Formula $\square$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Example:
+ 
+\begin_inset Formula $\text{End}_{\text{Ab}}(G)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In this section,
+\begin_inset Formula $\forall G\in\text{Obj}(\text{Ab})$
+\end_inset
+
+,
+ we consider 
+\begin_inset Formula $\text{End}_{\text{Ab}}(G):=\text{Hom}_{\text{Ab}}(G,G)$
+\end_inset
+
+ as a ring and study its structure.
+ We have already shown how 
+\begin_inset Formula $\text{End}_{\text{Ab}}(G)$
+\end_inset
+
+ is a ring in section 1 of the notes for chapter 3 section 1,
+ by considering the two operations as composition and addition,
+ where addition is defines as given any 
+\begin_inset Formula $\varphi,\phi:G\to H\in\text{Hom}_{Ab}(G,G),$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+(\varphi+\phi)(a):=\varphi(a)+\phi(a)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Proposition 5.1
+\begin_inset CommandInset label
+LatexCommand label
+name "Proposition-5.1"
+
+\end_inset
+
+:
+ 
+\series default
+
+\begin_inset Formula $\text{End}_{\text{Ab}}(\mathbb{Z})\cong\mathbb{Z}$
+\end_inset
+
+ as rings
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Proof:
+ 
+\series default
+Consider teh function 
+\begin_inset Formula $\varphi:\text{End}_{\text{Ab}}(\mathbb{Z})\to\mathbb{Z}$
+\end_inset
+
+ which is defined as:
+ given any group homomorphims 
+\begin_inset Formula $\alpha\in\text{End}_{\text{Ab}}(\mathbb{Z})$
+\end_inset
+
+,
+ 
+\begin_inset Formula $\varphi$
+\end_inset
+
+ maps it as 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\varphi:\alpha\to\alpha(1)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Now we want to show that that 
+\begin_inset Formula $\varphi$
+\end_inset
+
+ is a ring homomorphism,
+ Then consider teh following argument:
+ 
+\begin_inset Formula $\forall\alpha,\beta\in\text{End}_{\text{Ab}}(\mathbb{Z})$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\varphi(\alpha+\beta)=(\alpha+\beta)(1)=\alpha(1)+\beta(1)=\varphi(\alpha)+\varphi(\beta)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+To show that 
+\begin_inset Formula $\varphi$
+\end_inset
+
+ respects composition,
+ first consider that 
+\begin_inset Formula $\forall n\in\mathbb{Z}:\alpha(n)=\alpha(\sum_{i=1}^{n}1)=\sum_{i=1}^{n}\alpha(1)=n\cdot\alpha(1)$
+\end_inset
+
+,
+ hence consider the following argument:
+ 
+\begin_inset Formula $\forall\alpha,\beta\in\text{End}_{\text{Ab}}(\mathbb{Z})$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\varphi(\alpha\circ\beta)=\alpha\circ\beta(1)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Since 
+\begin_inset Formula $\beta:\mathbb{Z}\to\mathbb{Z}$
+\end_inset
+
+,
+ 
+\begin_inset Formula $\beta(1)\in\mathbb{Z}$
+\end_inset
+
+,
+ hence 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\alpha\circ\beta(1)=\beta(1)\cdot\alpha(1)=\alpha(1)\cdot\beta(1)=\varphi(\alpha)\cdot\varphi(\beta)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Further consider that 
+\begin_inset Formula $\varphi(id_{\mathbb{Z}})=id_{\mathbb{Z}}(1)=1$
+\end_inset
+
+.
+ Therefore 
+\begin_inset Formula $\varphi$
+\end_inset
+
+ is a ring homomorphism.
+\end_layout
+
+\begin_layout Standard
+Now we show that 
+\begin_inset Formula $\varphi$
+\end_inset
+
+ is an isomorphism,
+ thus we define the function 
+\begin_inset Formula $\chi:\mathbb{Z}\to\text{End}_{\text{Ab}}(\mathbb{Z})$
+\end_inset
+
+ as given 
+\begin_inset Formula $a\in\mathbb{Z},$
+\end_inset
+
+
+\begin_inset Formula $\chi$
+\end_inset
+
+ maps it as 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\chi:a\to\alpha
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+where 
+\begin_inset Formula $\alpha$
+\end_inset
+
+ is the group homomorphims that maps 
+\begin_inset Formula $n\in\mathbb{Z}$
+\end_inset
+
+ to 
+\begin_inset Formula $an\in\mathbb{Z}$
+\end_inset
+
+.
+ First thing we want to show is that 
+\begin_inset Formula $\chi$
+\end_inset
+
+ is a ring homomorphism,
+ 
+\begin_inset Formula $\forall a,b\in\mathbb{Z}$
+\end_inset
+
+,
+ consider the following argument:
+ 
+\begin_inset Formula $\forall a,b\in\mathbb{Z}:$
+\end_inset
+
+ Let 
+\begin_inset Formula $\chi(a)=\alpha,\chi(b)=\beta,\chi(a+b)=\gamma$
+\end_inset
+
+,
+ now we want to show that 
+\begin_inset Formula $\gamma=\alpha+\beta$
+\end_inset
+
+,
+ hence for any 
+\begin_inset Formula $k\in\mathbb{Z}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\gamma(k)=(a+b)k=ak+bk=\alpha(k)+\beta(k)=\left(\alpha+\beta\right)(k)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Hence 
+\begin_inset Formula $\gamma=\alpha+\beta$
+\end_inset
+
+.
+ therefore 
+\begin_inset Formula $\chi(a+b)=\chi(a)+\chi(b)$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+Simillarly consider the following argument that shows that 
+\begin_inset Formula $\chi$
+\end_inset
+
+ respects multiplication:
+ 
+\begin_inset Formula $\forall a,b\in\mathbb{Z}:$
+\end_inset
+
+ Let 
+\begin_inset Formula $\chi(a)=\alpha,\chi(b)=\beta$
+\end_inset
+
+ and 
+\begin_inset Formula $\chi(ab)=\gamma$
+\end_inset
+
+,
+ hence we want to show that 
+\begin_inset Formula $\gamma=\alpha\circ\beta$
+\end_inset
+
+,
+ thus consider for 
+\begin_inset Formula $\forall k\in\mathbb{Z}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\gamma(k)=\left(ab\right)k=a\left(bk\right)=a\cdot\beta(k)=\alpha\circ\beta(k)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+hence 
+\begin_inset Formula $\gamma=\alpha\circ\beta$
+\end_inset
+
+,
+ therefore we have shown that 
+\begin_inset Formula $\chi(ab)=\chi(a)\chi(b)$
+\end_inset
+
+.
+ Finally consider 
+\begin_inset Formula $\chi(1)=\alpha$
+\end_inset
+
+,
+ thus we want to show that 
+\begin_inset Formula $\alpha=id_{\mathbb{Z}}$
+\end_inset
+
+,
+ theu 
+\begin_inset Formula $\forall k\in\mathbb{Z}:\alpha(k)=k\cdot1=k=id_{\mathbb{Z}}(k)$
+\end_inset
+
+,
+ hence 
+\begin_inset Formula $\alpha=id_{\mathbb{Z}}$
+\end_inset
+
+,
+ therefore 
+\begin_inset Formula $\chi(a)=id_{\mathbb{Z}}$
+\end_inset
+
+,
+ Hence 
+\begin_inset Formula $\chi$
+\end_inset
+
+ is a ring homomorphism.
+ Hence we want to show that 
+\begin_inset Formula $\chi$
+\end_inset
+
+ is both a left and a right inverse of 
+\begin_inset Formula $\varphi$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+Thus we start by showing that 
+\begin_inset Formula $\chi$
+\end_inset
+
+ is a right inverse of 
+\begin_inset Formula $\varphi$
+\end_inset
+
+ i.e.
+ 
+\begin_inset Formula $\varphi\circ\chi=id_{\mathbb{Z}}$
+\end_inset
+
+.
+ Thus 
+\begin_inset Formula $\forall k\in\mathbb{Z}$
+\end_inset
+
+,
+ conisder 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\varphi\circ\chi(k)=\varphi(\kappa)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+where 
+\begin_inset Formula $\forall n\in\mathbb{Z}:\kappa(n)=kn$
+\end_inset
+
+.
+ Hence 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\varphi(\kappa)=\kappa(1)=k\cdot1=k
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Therefore,
+ 
+\begin_inset Formula $\forall k\in\mathbb{Z}:\varphi\circ\chi(k)=k=id_{\mathbb{Z}}(k)$
+\end_inset
+
+.
+ Hence showing that 
+\begin_inset Formula $\chi$
+\end_inset
+
+ is a right inverse of 
+\begin_inset Formula $\varphi$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+Now we start showing that 
+\begin_inset Formula $\chi$
+\end_inset
+
+ is a left inverse of 
+\begin_inset Formula $\varphi$
+\end_inset
+
+ i.e.
+ 
+\begin_inset Formula $\chi\circ\varphi=id_{\text{End}_{\text{Ab}}(\mathbb{Z})}$
+\end_inset
+
+.
+ Thus 
+\begin_inset Formula $\forall\alpha\in\text{End}_{\text{Ab}}(\mathbb{Z})$
+\end_inset
+
+ where 
+\begin_inset Formula $\alpha(1)=a\in\mathbb{Z}$
+\end_inset
+
+,
+ we get that 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\chi\circ\varphi(\alpha)=\chi(\alpha(1))=\chi(a)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Let 
+\begin_inset Formula $\chi(a)=\gamma\in\text{End}_{\text{Ab}}(\mathbb{Z})$
+\end_inset
+
+ where 
+\begin_inset Formula $\forall k\in\mathbb{Z}:\gamma(k)=ka$
+\end_inset
+
+,
+ thus we show that 
+\begin_inset Formula $\gamma=\alpha$
+\end_inset
+
+,
+ thus 
+\begin_inset Formula $\forall n\in\mathbb{Z}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\alpha(n)=n\alpha(1)=na=\gamma(n)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Thus 
+\begin_inset Formula $\forall n\in\mathbb{Z}:\alpha(n)=\gamma(n)$
+\end_inset
+
+,
+ hence we have shown that 
+\begin_inset Formula $\chi$
+\end_inset
+
+ is a left inverse of 
+\begin_inset Formula $\varphi$
+\end_inset
+
+.
+ Therefore proving that 
+\begin_inset Formula $\text{End}_{\text{Ab}}(\mathbb{Z})\cong\mathbb{Z}$
+\end_inset
+
+.
+ 
+\begin_inset Formula $\square$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Fun Fact 5.2
+\begin_inset CommandInset label
+LatexCommand label
+name "Fun-Fact-5.2"
+
+\end_inset
+
+:
+ 
+\series default
+The entire theory of modules is based on the observation that 
+\begin_inset Formula $\text{End}_{\text{Ab}}(G)$
+\end_inset
+
+
+\series bold
+ 
+\series default
+is a ring for every abelian group 
+\begin_inset Formula $G$
+\end_inset
+
+.
+ Also that group of units in 
+\begin_inset Formula $\text{End}_{\text{Ab}}(G)$
+\end_inset
+
+ is nothing but 
+\begin_inset Formula $\text{Aut}_{\text{Ab}}(\mathbb{Z})$
+\end_inset
+
+.
+ Every ring 
+\begin_inset Formula $R$
+\end_inset
+
+ interacts with the ring of endomorphisms of the underlying abelian group 
+\begin_inset Formula $(R,+)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Definition 5.3
+\begin_inset CommandInset label
+LatexCommand label
+name "Definition-5.3"
+
+\end_inset
+
+:
+ 
+\series default
+Given a ring 
+\begin_inset Formula $R$
+\end_inset
+
+,
+ then 
+\begin_inset Formula $\forall r\in R$
+\end_inset
+
+,
+ we define the left multiplication by 
+\begin_inset Formula $r$
+\end_inset
+
+,
+ denoted 
+\begin_inset Formula $\lambda_{r}$
+\end_inset
+
+ as 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\forall a\in R:\lambda_{r}(a)=ra
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Simillarly,
+ right multiplication by 
+\begin_inset Formula $r$
+\end_inset
+
+,
+ denoted 
+\begin_inset Formula $\mu_{r}$
+\end_inset
+
+,
+ is defined as 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\forall a\in R:\mu_{r}(a)=ar
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Proposition 5.4
+\begin_inset CommandInset label
+LatexCommand label
+name "Proposition-5.4"
+
+\end_inset
+
+:
+ 
+\series default
+Let 
+\begin_inset Formula $R$
+\end_inset
+
+ be a ring then the function 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\forall r\in R:r\to\lambda_{r}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+is an injective ring homomorphism 
+\begin_inset Formula $\lambda:R\to\text{End}_{\text{Ab}}(R)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Proof:
+ 
+\series default
+First we show that 
+\begin_inset Formula $\lambda:R\to\text{End}_{\text{Ab}}(R)$
+\end_inset
+
+ is a ring homomorphims.
+ 
+\begin_inset Formula $\forall a,b\in R$
+\end_inset
+
+,
+ let 
+\begin_inset Formula $\lambda(a)=\lambda_{a},\lambda(b)=\lambda_{b}$
+\end_inset
+
+ and 
+\begin_inset Formula $\lambda(a+b)=\lambda_{a+b}$
+\end_inset
+
+,
+ hence we want to show that 
+\begin_inset Formula $\lambda_{a}+\lambda_{b}=\lambda_{a+b}$
+\end_inset
+
+.
+ Thus consider 
+\begin_inset Formula $\forall r\in R:$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\lambda_{a+b}(r)=(a+b)r=ar+br=\lambda_{a}(r)+\lambda_{b}(r)=\left(\lambda_{a}+\lambda_{b}\right)(r)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Now we show that 
+\begin_inset Formula $\lambda_{ab}=\lambda_{a}\circ\lambda_{b}$
+\end_inset
+
+.
+ Thus let 
+\begin_inset Formula $\lambda(a)=\lambda_{a},\lambda(b)=\lambda_{b}$
+\end_inset
+
+ and 
+\begin_inset Formula $\lambda(ab)=\lambda_{ab}$
+\end_inset
+
+.
+ Thus consider 
+\begin_inset Formula $\forall r\in R:$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\lambda_{ab}(r)=(ab)r=a(br)=a\cdot\lambda_{b}(r)=\lambda_{a}\circ\lambda_{b}(r)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Finally consider 
+\begin_inset Formula $1\in R$
+\end_inset
+
+,
+ thus let 
+\begin_inset Formula $\lambda(1)=\lambda_{1}$
+\end_inset
+
+,
+ hence we want to show that 
+\begin_inset Formula $\lambda_{1}=id_{R}$
+\end_inset
+
+.
+ Thus consider 
+\begin_inset Formula $\forall r\in R$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\lambda_{1}(r)=1\cdot r=r=id_{R}(r)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Thus showing that 
+\begin_inset Formula $\lambda$
+\end_inset
+
+ is a ring homomorphism.
+ Now we shown injectivity.
+ 
+\begin_inset Formula $\forall a,b\in R$
+\end_inset
+
+,
+ suppose that 
+\begin_inset Formula $\lambda_{a}=\lambda_{b}$
+\end_inset
+
+.
+ Hence we get that for 
+\begin_inset Formula $1\in R$
+\end_inset
+
+,
+ 
+\begin_inset Formula $\lambda_{a}(1)=\lambda_{b}(1)$
+\end_inset
+
+,
+ which implies that 
+\begin_inset Formula $a=b$
+\end_inset
+
+.
+ Thus showing that 
+\begin_inset Formula $\lambda$
+\end_inset
+
+ is injective.
+ 
+\begin_inset Formula $\square$
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document
