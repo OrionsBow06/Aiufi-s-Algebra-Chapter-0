@@ -1,0 +1,1306 @@
+#LyX 2.4 created this file. For more info see https://www.lyx.org/
+\lyxformat 620
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\begin_preamble
+\usepackage{tikz}
+\usepackage{tikz-cd}
+\end_preamble
+\use_default_options true
+\maintain_unincluded_children no
+\language canadian
+\language_package default
+\inputencoding utf8
+\fontencoding auto
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_roman_osf false
+\font_sans_osf false
+\font_typewriter_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\float_placement class
+\float_alignment class
+\paperfontsize default
+\spacing onehalf
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_formatted_ref 0
+\use_minted 0
+\use_lineno 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tablestyle default
+\tracking_changes false
+\output_changes false
+\change_bars false
+\postpone_fragile_content true
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\docbook_table_output 0
+\docbook_mathml_prefix 1
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Ideals and Quotient Rings
+\end_layout
+
+\begin_layout Author
+Karan Chauhan
+\end_layout
+
+\begin_layout Date
+2025-07-15
+\end_layout
+
+\begin_layout Section
+Review 
+\end_layout
+
+\begin_layout Subsection
+Quotients in sets (set of equivalence classes)
+\end_layout
+
+\begin_layout Standard
+given 
+\begin_inset Formula $f:A\to B$
+\end_inset
+
+ (a set function),
+ we define 
+\begin_inset Formula $\sim$
+\end_inset
+
+ as,
+ 
+\begin_inset Formula $\forall a',a"\in A$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+a'\sim a"\text{ if and only if }f(a')=f(a")
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+hence we get the canonical decomposition 
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+[
+\backslash
+begin{tikzcd}
+\end_layout
+
+\begin_layout Plain Layout
+
+	A && {A/
+\backslash
+sim} && {im(f)} && B
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+arrow[two heads,
+ from=1-1,
+ to=1-3]
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+arrow["f"{description},
+ bend left=25pt,
+ from=1-1,
+ to=1-7]
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+arrow["{
+\backslash
+tilde{f}}"{description},
+ from=1-3,
+ to=1-5]
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+arrow[hook,
+ from=1-5,
+ to=1-7]
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tikzcd}
+\backslash
+]
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+where 
+\begin_inset Formula $f([a]_{\sim}):=f(a)$
+\end_inset
+
+.
+ In this case 
+\begin_inset Formula $\sim$
+\end_inset
+
+ is defined by 
+\begin_inset Formula $f$
+\end_inset
+
+.
+ In general any quivalence relation 
+\begin_inset Formula $\sim$
+\end_inset
+
+ defines 
+\begin_inset Formula $A/\sim$
+\end_inset
+
+ for any 
+\begin_inset Formula $A$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Subsection
+Quotient groups 
+\end_layout
+
+\begin_layout Standard
+given any 
+\begin_inset Formula $\sim$
+\end_inset
+
+ relation on 
+\begin_inset Formula $G$
+\end_inset
+
+,
+ we want to show that a group 
+\begin_inset Formula $G/\sim$
+\end_inset
+
+ exists with the projection group morphism 
+\begin_inset Formula $\pi_{\sim}$
+\end_inset
+
+ and is initial in the category of all morphisms that are compatible with the equi relation 
+\begin_inset Formula $\sim$
+\end_inset
+
+.
+ Thus the operation on 
+\begin_inset Formula $G/\sim$
+\end_inset
+
+ must be:
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\left[a\right]\cdot\left[b\right]=\pi(a)\cdot\pi(b)=\pi(ab)=\left[ab\right]
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Thus 
+\begin_inset Formula $G/\sim$
+\end_inset
+
+ has a group structure if and only if 
+\begin_inset Formula $\forall a,b,g\in G:\left(a\sim b\right)\implies\left(ga\sim gb\text{ and }ag\sim bg\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Ideals 
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Defination 2.1
+\begin_inset CommandInset label
+LatexCommand label
+name "Definition 2.1"
+
+\end_inset
+
+:
+ 
+\series default
+A subring 
+\begin_inset Formula $S$
+\end_inset
+
+ of a ring 
+\begin_inset Formula $R$
+\end_inset
+
+ is a ring whose underlying set is a subset of 
+\begin_inset Formula $R$
+\end_inset
+
+ and the inclusion function 
+\begin_inset Formula $S\xhookrightarrow{}R$
+\end_inset
+
+ is a ring homomorphism
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Definition 2.2
+\begin_inset CommandInset label
+LatexCommand label
+name "Definition-2.2"
+
+\end_inset
+
+:
+ 
+\series default
+Let 
+\begin_inset Formula $R$
+\end_inset
+
+ be a ring.
+ A subgroup 
+\begin_inset Formula $I$
+\end_inset
+
+ of 
+\begin_inset Formula $\left(R,+\right)$
+\end_inset
+
+ is a left ideal of 
+\begin_inset Formula $R$
+\end_inset
+
+ is 
+\begin_inset Formula $\forall r\in R:rI\subseteq I$
+\end_inset
+
+ i.e.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\forall r\in R,\forall a\in I:ra\in I
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+It is a right ideal if 
+\begin_inset Formula $\forall r\in R:Ir\subseteq I$
+\end_inset
+
+ i.e.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\forall r\in R.\forall a\in I:ar\in I
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+A two sided ideal is a sungroup 
+\begin_inset Formula $I$
+\end_inset
+
+ which is both a left ideal and a right ideal.
+ 
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+note:
+ 
+\series default
+Ideals are close to beig subrings,
+ they are subgroups and are closed with repsect to multiplication but teh inly ideal if ring 
+\begin_inset Formula $R$
+\end_inset
+
+ conatining 
+\begin_inset Formula $1_{R}$
+\end_inset
+
+
+\series bold
+ 
+\series default
+is 
+\series bold
+
+\begin_inset Formula $R$
+\end_inset
+
+ 
+\series default
+itself.
+ (immediate consequence of the definition).
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Proposition 2.3
+\begin_inset CommandInset label
+LatexCommand label
+name "Proposition-2.3"
+
+\end_inset
+
+:
+ 
+\series default
+Let 
+\begin_inset Formula $\varphi:R\to S$
+\end_inset
+
+ be any ring homomorphism,
+ then 
+\begin_inset Formula $\ker\varphi$
+\end_inset
+
+ is an ideal of 
+\begin_inset Formula $R$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Proof:
+ 
+\series default
+It is to be noted that 
+\begin_inset Formula $\ker\varphi=\{r\in R\vert\varphi(r)=0\}$
+\end_inset
+
+.
+ Thus consider 
+\begin_inset Formula $\forall a\in R.\forall r\in\ker(\varphi):$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\varphi(ar)=\varphi(a)\varphi(r)=\varphi(a)\cdot0=0
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\varphi(ra)=\varphi(r)\varphi(a)=0\cdot\varphi(a)=0
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Thus we have shown that 
+\begin_inset Formula $\ker\varphi$
+\end_inset
+
+ is an ideal.
+ 
+\begin_inset Formula $\square$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Proposition 2.4
+\begin_inset CommandInset label
+LatexCommand label
+name "Proposition-2.4"
+
+\end_inset
+
+:
+ 
+\series default
+Let 
+\begin_inset Formula $\varphi:R\to S$
+\end_inset
+
+ be a ring homomorphism and let 
+\begin_inset Formula $J$
+\end_inset
+
+ be an ideal of 
+\begin_inset Formula $S$
+\end_inset
+
+,
+ then 
+\begin_inset Formula $I=\varphi^{-1}(J)$
+\end_inset
+
+ is an ideal of 
+\begin_inset Formula $R$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Proof:
+ 
+\series default
+Thus we want to show that 
+\begin_inset Formula $\forall a\in R:$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+a\varphi^{-1}(J)\subseteq\varphi^{-1}(J)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+and 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\varphi^{-1}(J)a\subseteq\varphi^{-1}(J)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Thus consider 
+\begin_inset Formula $\forall a\in R,\forall r\in I:$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\varphi(ar)=\varphi(a)\cdot\varphi(r)=a'\cdot j
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Since 
+\begin_inset Formula $J$
+\end_inset
+
+ is an ideal 
+\begin_inset Formula $a'\cdot j\in J$
+\end_inset
+
+,
+ hence 
+\begin_inset Formula $ar\in\varphi^{-1}(J)$
+\end_inset
+
+,
+ therefore 
+\begin_inset Formula $a\varphi^{-1}(J)\subseteq\varphi^{-1}(J)$
+\end_inset
+
+.
+ Simillarly consider 
+\begin_inset Formula $\forall a\in R,\forall r\in I:$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\varphi(ra)=\varphi(r)\cdot\varphi(a)=j\cdot a'
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Since 
+\begin_inset Formula $J$
+\end_inset
+
+ is an ideal 
+\begin_inset Formula $j\cdot a'\in J$
+\end_inset
+
+,
+ hence 
+\begin_inset Formula $ra\in\varphi^{-1}(J)$
+\end_inset
+
+,
+ therefore 
+\begin_inset Formula $\varphi^{-1}(J)a\subseteq\varphi^{-1}(J)$
+\end_inset
+
+.
+ Hence 
+\begin_inset Formula $\varphi^{-1}(J)$
+\end_inset
+
+ is an ideal.
+ 
+\end_layout
+
+\begin_layout Section
+Quotients 
+\end_layout
+
+\begin_layout Standard
+First we discuss the multiplication operation that is to be defined on the ring 
+\begin_inset Formula $R/I$
+\end_inset
+
+,
+ thus for any 
+\begin_inset Formula $a+I,b+I\in R/I$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\left(a+I\right)\left(b+I\right)=\pi(a)\cdot\pi(b)=\pi(ab)=ab+I
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Thus the multiplication operation on the quotient ring must be defined as 
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Definition 3.1
+\begin_inset CommandInset label
+LatexCommand label
+name "Definition-3.1"
+
+\end_inset
+
+:
+ 
+\series default
+
+\begin_inset Formula $\forall\left(a+I\right),\left(b+I\right)\in R/I:$
+\end_inset
+
+
+\begin_inset Formula $\left(a+I\right)\left(b+I\right):=ab+I$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+It is obvious that with multiplication well defined,
+ 
+\begin_inset Formula $R/I$
+\end_inset
+
+ becomes a ring.
+ Thus first we'll argue that if 
+\begin_inset Formula $R/I$
+\end_inset
+
+ is a ring then 
+\begin_inset Formula $I$
+\end_inset
+
+ must be an ideal and then we'll show the converse.
+ 
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Proposition 3.2
+\begin_inset CommandInset label
+LatexCommand label
+name "Proposition-3.2"
+
+\end_inset
+
+:
+ 
+\series default
+Let 
+\begin_inset Formula $R$
+\end_inset
+
+ be a ring and 
+\begin_inset Formula $I$
+\end_inset
+
+ a subgroup of the group 
+\begin_inset Formula $\left(R,+\right)$
+\end_inset
+
+.
+ If the quotient group 
+\begin_inset Formula $R/I$
+\end_inset
+
+ is a ring with the multiplication defined in 
+\begin_inset CommandInset ref
+LatexCommand labelonly
+reference "Definition-3.1"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+,
+ then 
+\begin_inset Formula $I$
+\end_inset
+
+ is an ideal.
+ 
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Proof:
+ 
+\series default
+Suppose 
+\begin_inset Formula $R/I$
+\end_inset
+
+ is a ring,
+ then we get the projection morphism 
+\begin_inset Formula $\pi:R\to R/I$
+\end_inset
+
+ is a ring homomorphism.
+ Thus we consider 
+\begin_inset Formula $\ker(\pi)$
+\end_inset
+
+,
+ which is 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\ker\pi=\{r\in R|r+I=0\}=\{r\in R\vert r\in I\}=I
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+and we proved in 
+\begin_inset CommandInset ref
+LatexCommand labelonly
+reference "Proposition-2.3"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+ that for any ring homomorphism,
+ 
+\begin_inset Formula $\ker$
+\end_inset
+
+ is an ideal,
+ thus we get that 
+\begin_inset Formula $I$
+\end_inset
+
+ is an ideal of 
+\begin_inset Formula $R$
+\end_inset
+
+.
+ 
+\begin_inset Formula $\square$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Proposition 3.3
+\begin_inset CommandInset label
+LatexCommand label
+name "Proposition-3.3"
+
+\end_inset
+
+:
+ 
+\series default
+Let 
+\begin_inset Formula $R$
+\end_inset
+
+ be a ring and 
+\begin_inset Formula $I$
+\end_inset
+
+ be an ideal of 
+\begin_inset Formula $R$
+\end_inset
+
+.
+ Then the quotient group 
+\begin_inset Formula $R/I$
+\end_inset
+
+ is a ring i.e.
+ the multiplication defined in 
+\begin_inset CommandInset ref
+LatexCommand labelonly
+reference "Definition-3.1"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+ is well defined.
+ 
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Proof:
+ 
+\series default
+We suppose 
+\begin_inset Formula $I$
+\end_inset
+
+ is an ideal of 
+\begin_inset Formula $R$
+\end_inset
+
+.
+ then suppose that 
+\begin_inset Formula $\forall a',a",b',b"\in R$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+a'+I=a"+I
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+and 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+b'+I=b"+I
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+thus we get that 
+\begin_inset Formula $a"-a'\in I$
+\end_inset
+
+ and 
+\begin_inset Formula $b"-b'\in I$
+\end_inset
+
+.
+ It is alos to be noted that 
+\begin_inset Formula $a"b"-a'b'=a"b"-a'b"+a'b"-a'b'=b"(a"-a')+a'(b"-b')$
+\end_inset
+
+.
+ Since 
+\begin_inset Formula $a"-a'\in I$
+\end_inset
+
+ and 
+\begin_inset Formula $I$
+\end_inset
+
+ is an ideal,
+ we get taht 
+\begin_inset Formula $b"(a"-a')\in I$
+\end_inset
+
+.
+ Simillarly,
+ since 
+\begin_inset Formula $b"-b'\in I$
+\end_inset
+
+ and 
+\begin_inset Formula $I$
+\end_inset
+
+ is an ideal,
+ we get taht 
+\begin_inset Formula $a'(b"-b')\in I$
+\end_inset
+
+,
+ thus we get that 
+\begin_inset Formula $a"b"-a'b'=b"(a"-a')+a'(b"-b')\in I$
+\end_inset
+
+,
+ therefore showing that if 
+\begin_inset Formula $a'+I=a"+I$
+\end_inset
+
+ and 
+\begin_inset Formula $b'+I=b"+I$
+\end_inset
+
+,
+ then 
+\begin_inset Formula $a'b'+I=a"b"+I$
+\end_inset
+
+.
+ Thus showing that the multiplication is well defined on 
+\begin_inset Formula $R/I$
+\end_inset
+
+ and hence 
+\begin_inset Formula $R/I$
+\end_inset
+
+ is a ring.
+ 
+\begin_inset Formula $\square$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Hence we have shown taht 
+\begin_inset Formula $I$
+\end_inset
+
+ is an ideal if and only if 
+\begin_inset Formula $R/I$
+\end_inset
+
+ is a ring.
+ 
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Definition 3.5
+\begin_inset CommandInset label
+LatexCommand label
+name "Definition-3.5"
+
+\end_inset
+
+:
+ 
+\series default
+The ring 
+\begin_inset Formula $R/I$
+\end_inset
+
+ is called the quotient ring of 
+\begin_inset Formula $R$
+\end_inset
+
+ modulo 
+\begin_inset Formula $I$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Example 3.6
+\begin_inset CommandInset label
+LatexCommand label
+name "Example-3.6"
+
+\end_inset
+
+:
+ 
+\series default
+It has been shown that all subgroups of 
+\begin_inset Formula $(\mathbb{Z},+)$
+\end_inset
+
+ are of the form 
+\begin_inset Formula $n\mathbb{Z}$
+\end_inset
+
+ for a non negative integer 
+\begin_inset Formula $n$
+\end_inset
+
+.
+ It is immediately verified that all subgroups of 
+\begin_inset Formula $\mathbb{Z}$
+\end_inset
+
+are in fact ideals of teh ring 
+\begin_inset Formula $(\mathbb{Z},+,\cdot)$
+\end_inset
+
+.
+ Thus the quotients 
+\begin_inset Formula $\mathbb{Z}/n\mathbb{Z}$
+\end_inset
+
+ are also rings.
+ Extending the idea further,
+ we notice that for any ring 
+\begin_inset Formula $R$
+\end_inset
+
+,
+ there exists a ring homomorphism 
+\begin_inset Formula $f:\mathbb{Z\to}R$
+\end_inset
+
+,
+ since 
+\begin_inset Formula $\mathbb{Z}$
+\end_inset
+
+ is an initial in 
+\begin_inset Formula $R$
+\end_inset
+
+.
+ Looking at the 
+\begin_inset Formula $\ker f\subset\mathbb{Z}$
+\end_inset
+
+,
+ we get two things that 1) 
+\begin_inset Formula $\ker f$
+\end_inset
+
+ is of the form 
+\begin_inset Formula $n\mathbb{Z}$
+\end_inset
+
+ for some non negative integer 
+\begin_inset Formula $n$
+\end_inset
+
+ and 2) 
+\begin_inset Formula $\ker f$
+\end_inset
+
+ is an ideal as shown in 
+\begin_inset CommandInset ref
+LatexCommand labelonly
+reference "Proposition-2.3"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+.
+ Thus every ring 
+\begin_inset Formula $R$
+\end_inset
+
+ determines an ideal 
+\begin_inset Formula $n\mathbb{Z}$
+\end_inset
+
+ inside 
+\begin_inset Formula $\mathbb{Z},$
+\end_inset
+
+which depends on 
+\begin_inset Formula $R$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Definition 3.7:
+ 
+\series default
+The number 
+\begin_inset Formula $n$
+\end_inset
+
+ determined by a given 
+\begin_inset Formula $R$
+\end_inset
+
+,
+ as talked about in 
+\begin_inset CommandInset ref
+LatexCommand labelonly
+reference "Example-3.6"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+,
+ is called the characteristic of 
+\begin_inset Formula $R$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Note:
+ 
+\series default
+Through the course of these notes,
+ we also proved that a subgroup 
+\begin_inset Formula $I$
+\end_inset
+
+ of a group 
+\begin_inset Formula $(R,+)$
+\end_inset
+
+where 
+\begin_inset Formula $R$
+\end_inset
+
+ is a ring,
+ is an ideal if and only if it is also a kernel of a ring morphism.
+ If it is a kernal,
+ then we know that it is an ideal by 
+\begin_inset CommandInset ref
+LatexCommand labelonly
+reference "Proposition-2.3"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+.
+ If it is an ideal,
+ then we know it is the kernel of the ring homomorphism 
+\begin_inset Formula $\pi:R\to R/I$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\end_body
+\end_document
